@@ -10,6 +10,9 @@ import { SubCategoryComponent } from './category/sub-category/sub-category.compo
 import { ReferenceComponent } from './category/sub-category/references/reference.component';
 import { AzureLoginComponent } from './azure-login/azure-login.component';
 
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +21,8 @@ import { AzureLoginComponent } from './azure-login/azure-login.component';
     CategoryComponent,
     SubCategoryComponent,
     ReferenceComponent,
-    AzureLoginComponent
+    AzureLoginComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
