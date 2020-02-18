@@ -9,6 +9,8 @@ import { CategoryComponent } from './category/category.component';
 import { SubCategoryComponent } from './category/sub-category/sub-category.component';
 import { ReferenceComponent } from './category/sub-category/references/reference.component';
 import { AzureLoginComponent } from './azure-login/azure-login.component';
+import { Routes } from '@angular/router';
+
 
 @NgModule({
   declarations: [
