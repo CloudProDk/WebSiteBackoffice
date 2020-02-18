@@ -14,9 +14,13 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatToolbarModule, MatButtonModule} from '@angular/material/';
 import {MatIconModule} from '@angular/material/icon';
-
-
-
+import { MainNavComponent } from './main-nav/main-nav.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
 
 
 @NgModule({
@@ -28,18 +32,27 @@ import {MatIconModule} from '@angular/material/icon';
     SubCategoryComponent,
     ReferenceComponent,
     AzureLoginComponent,
-    HeaderComponent
-    
+    HeaderComponent,
+    MainNavComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+
     MatCheckboxModule,
     MatMenuModule,
     MatToolbarModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
