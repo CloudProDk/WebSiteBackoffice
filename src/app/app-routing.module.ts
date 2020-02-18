@@ -5,7 +5,7 @@ import { SubCategoryComponent } from './category/sub-category/sub-category.compo
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/category' },
+  { path: '', redirectTo: '/category', pathMatch: 'full' },
   { path: 'category', component: CategoryComponent},
   { path: 'sub-category', component: SubCategoryComponent},
 ];
