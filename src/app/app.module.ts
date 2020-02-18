@@ -12,7 +12,7 @@ import { AzureLoginComponent } from './azure-login/azure-login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatMenuModule} from '@angular/material/menu';
-import {MatToolbarModule, MatButtonModule} from '@angular/material/';
+import {MatToolbarModule, MatButtonModule, MatIconModule} from '@angular/material/';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -36,11 +36,9 @@ import { MatListModule } from '@angular/material/list';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-
     MatCheckboxModule,
     MatMenuModule,
     MatToolbarModule,
-    MatIconModule,
     MatButtonModule,
     LayoutModule,
     MatToolbarModule,
