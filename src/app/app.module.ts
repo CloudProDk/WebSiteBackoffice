@@ -9,6 +9,12 @@ import { CategoryComponent } from './category/category.component';
 import { SubCategoryComponent } from './category/sub-category/sub-category.component';
 import { ReferenceComponent } from './category/sub-category/references/reference.component';
 import { AzureLoginComponent } from './azure-login/azure-login.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatToolbarModule, MatButtonModule} from '@angular/material/';
+import {MatIconModule} from '@angular/material/icon';
+
 
 
 
@@ -23,10 +29,17 @@ import { AzureLoginComponent } from './azure-login/azure-login.component';
     ReferenceComponent,
     AzureLoginComponent,
     HeaderComponent
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatCheckboxModule,
+    MatMenuModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
