@@ -9,11 +9,7 @@ import { ReferenceService } from 'src/app/services/reference/reference.service';
   styleUrls: ['./reference-list.component.scss']
 })
 export class ReferenceListComponent implements OnInit {
-  @Output() referenceWasSelected = new EventEmitter<Reference>();
-  listOfRefs = [];
-  @Input() clickedReference: Reference ;
-  @Output() referenceSelected = new EventEmitter<void>();
-
+  listOfRefs: Array<Reference> = [];
 
   constructor(private listService: ReferenceService) { }
 
@@ -21,15 +17,5 @@ export class ReferenceListComponent implements OnInit {
     this.listOfRefs = this.listService.listOfReferences();
     console.log(this.listOfRefs);
   }
-
-  onSelected() {
-    this.referenceSelected.emit();
-  }
-  onReferenceSelected(reference: Reference) {
-    this.referenceWasSelected.emit(reference);
-
-
-  }
-
 }
 

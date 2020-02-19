@@ -1,3 +1,4 @@
+import { ReferenceListComponent } from './category/sub-category/references/reference-list/reference-list.component';
 import { ReferenceEditComponent } from './category/sub-category/references/reference-edit/reference-edit.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -26,7 +27,8 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
     SubCategoryComponent,
     ReferenceComponent,
     AzureLoginComponent,
-    ReferenceEditComponent
+    ReferenceEditComponent,
+    ReferenceListComponent
   ],
   imports: [
     BrowserModule,
