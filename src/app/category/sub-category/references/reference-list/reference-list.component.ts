@@ -9,6 +9,7 @@ import { ReferenceService } from 'src/app/services/reference/reference.service';
   styleUrls: ['./reference-list.component.scss']
 })
 export class ReferenceListComponent implements OnInit {
+  @Output() referenceWasSelected: Reference;
   listOfRefs: Array<Reference> = [];
 
   constructor(private listService: ReferenceService) { }
@@ -16,6 +17,11 @@ export class ReferenceListComponent implements OnInit {
   ngOnInit() {
     this.listOfRefs = this.listService.listOfReferences();
     console.log(this.listOfRefs);
+  }
+
+  onReferenceSelected(reference: Reference) {
+    this.referenceWasSelected = reference;
+
   }
 }
 
