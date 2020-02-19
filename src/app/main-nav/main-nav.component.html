@@ -1,16 +1,23 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" fixedInViewport
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="true"
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Menu</mat-toolbar>
-    <mat-nav-list>
-      <a mat-list-item href="#">Link 1</a>
-      <a mat-list-item href="#">Link 2</a>
-      <a mat-list-item href="#">Link 3</a>
-    </mat-nav-list>
+    <ul>
+      <mat-nav-list>
+        <a mat-list-item href="#">Cloud</a>
+          <ul>
+            <mat-nav-list class="sub-categories">
+              <a mat-list-item href="#">IOT</a>
+              <a mat-list-item href="#">Azure</a>
+              <a mat-list-item href="#">Database</a>
+            </mat-nav-list>
+          </ul>
+        <a mat-list-item href="#">Mobile</a>
+        <a mat-list-item href="#">Apps</a>
+        <a mat-list-item href="#">Support</a>
+      </mat-nav-list>
+    </ul>
   </mat-sidenav>
-  <mat-sidenav-content>
-    <!-- Add Content Here -->
-  </mat-sidenav-content>
 </mat-sidenav-container>
