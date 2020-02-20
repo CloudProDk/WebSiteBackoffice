@@ -9,6 +9,7 @@ import { CategoryComponent } from './category/category.component';
 import { SubCategoryComponent } from './category/sub-category/sub-category.component';
 import { ReferenceComponent } from './category/sub-category/references/reference.component';
 import { AzureLoginComponent } from './azure-login/azure-login.component';
+import { Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatMenuModule} from '@angular/material/menu';
@@ -17,6 +18,7 @@ import { MainNavComponent } from './main-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+
 
 
 @NgModule({
