@@ -14,7 +14,7 @@ export class ReferenceService {
   constructor() {  }
 
   listOfReferences() {
-    this.listLength = this.list.push(this.ref1, this.ref2, this.ref3, this.ref1);
+    this.listLength = this.list.push(this.ref1, this.ref2, this.ref3);
     return this.list;
   }
 }

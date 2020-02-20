@@ -1,5 +1,4 @@
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
-import { Reference } from 'src/app/models/reference.model';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-reference-item',
@@ -7,14 +6,10 @@ import { Reference } from 'src/app/models/reference.model';
   styleUrls: ['./reference-item.component.scss']
 })
 export class ReferenceItemComponent implements OnInit {
-  @Input() reference: Reference;
-  @Output() referenceSelected = new EventEmitter<void>();
+
   constructor() { }
 
   ngOnInit() {
   }
 
-  onSelected() {
-    this.referenceSelected.emit();
-  }
 }
