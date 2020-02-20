@@ -17,7 +17,4 @@ export class ReferenceService {
     this.listLength = this.list.push(this.ref1, this.ref2, this.ref3);
     return this.list;
   }
-  onSelet() {
-
-  }
 }
