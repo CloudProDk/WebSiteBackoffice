@@ -7,7 +7,7 @@ import {MatInputModule} from '@angular/material/input';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { MenuComponent } from './menu/menu.component';
+
 import { CategoryComponent } from './category/category.component';
 import { SubCategoryComponent } from './category/sub-category/sub-category.component';
 import { ReferenceComponent } from './category/sub-category/reference/reference.component';
@@ -28,7 +28,6 @@ import { MatListModule } from '@angular/material/list';
   declarations: [
     AppComponent,
     HeaderComponent,
-    MenuComponent,
     CategoryComponent,
     SubCategoryComponent,
     ReferenceComponent,
