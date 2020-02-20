@@ -10,6 +10,15 @@ import { SubCategoryComponent } from './category/sub-category/sub-category.compo
 import { ReferenceComponent } from './category/sub-category/references/reference.component';
 import { AzureLoginComponent } from './azure-login/azure-login.component';
 import { Routes } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatToolbarModule, MatButtonModule, MatIconModule} from '@angular/material/';
+import { MainNavComponent } from './main-nav/main-nav.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+
 
 
 @NgModule({
@@ -20,11 +29,26 @@ import { Routes } from '@angular/router';
     CategoryComponent,
     SubCategoryComponent,
     ReferenceComponent,
-    AzureLoginComponent
+    AzureLoginComponent,
+    HeaderComponent,
+    MainNavComponent
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatCheckboxModule,
+    MatMenuModule,
+    MatToolbarModule,
+    MatButtonModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

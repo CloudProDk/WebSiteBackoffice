@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/category', pathMatch: 'full' },
   { path: 'category', component: CategoryComponent},
   { path: 'sub-category', component: SubCategoryComponent},
+
 ];
 
 @NgModule({
