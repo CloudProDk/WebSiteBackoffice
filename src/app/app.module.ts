@@ -18,6 +18,17 @@ import { ReferenceComponent } from './category/sub-category/references/reference
 import { AzureLoginComponent } from './azure-login/azure-login.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
+import { Routes } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatToolbarModule, MatButtonModule, MatIconModule} from '@angular/material/';
+import { MainNavComponent } from './main-nav/main-nav.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,18 +38,36 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
     SubCategoryComponent,
     ReferenceComponent,
     AzureLoginComponent,
+
     ReferenceEditComponent,
-    ReferenceListComponent
+    ReferenceListComponent,
+
+    HeaderComponent,
+    MainNavComponent
+
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+
     NoopAnimationsModule,
     MatSliderModule,
     MatButtonModule,
     MatCheckboxModule,
+    MatInputModule,
+
+    BrowserAnimationsModule,
+    MatCheckboxModule,
+    MatMenuModule,
+    MatToolbarModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatSidenavModule,
     MatIconModule,
-    MatInputModule
+    MatListModule
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]
