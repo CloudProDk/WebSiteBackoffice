@@ -10,7 +10,8 @@ import { ReferenceService } from 'src/app/services/reference/reference.service';
 })
 export class ReferenceListComponent implements OnInit {
   listOfRefs: Array<Reference> = [];
-  @Output() activeObject = new EventEmitter<Reference>();
+  // @Output() activeObject = new EventEmitter<Reference>();
+  selectedReferenceInListComp: Reference = {header: '', description: ''};
 
   constructor(private referenceService: ReferenceService) { }
 
@@ -20,10 +21,10 @@ export class ReferenceListComponent implements OnInit {
   }
 
   selectedItem( ref: Reference) {
-    this.activeObject.emit(ref);
+    // this.activeObject.emit(ref);
+    this.selectedReferenceInListComp = ref;
     console.log(ref);
     console.log('set selected reference in ref service');
-    this.referenceService.setSelectedReference(ref);
   }
 }
 

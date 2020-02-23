@@ -9,12 +9,11 @@ import { ReferenceService } from 'src/app/services/reference/reference.service';
 })
 export class ReferenceEditComponent implements OnInit {
 // @Input() activeObject: Reference = {header: 'aaaaaa', description: 'zzzzzzzzz'};
-  selectedReference: Reference = {header: 'www', description: 'zzz'};
+ @Input() selectedReference: Reference = {header: 'bbbb', description: 'qqq'};
 
   constructor(private referenceService: ReferenceService) { }
 
   ngOnInit() {
-    this.selectedReference = this.referenceService.getSelectedReference();
   }
 
   clickTest() {

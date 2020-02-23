@@ -35,14 +35,14 @@
 </div>
 <div>
     <form class="example-form" >
-        <mat-form-field class="example-full-width">
-          <mat-label>{{selectedReference.header}}</mat-label>
-          <input matInput placeholder="" value="">
+        <mat-form-field class="example-full-width" floatLabel='always'>
+          <mat-label></mat-label>
+          <input matInput placeholder="" value="{{selectedReference.header}}">
         </mat-form-field> <br>
       
-        <mat-form-field class="example-full-width">
-          <mat-label>{{selectedReference.description}}</mat-label>
-          <textarea matInput placeholder=""></textarea>
+        <mat-form-field class="example-full-width" floatLabel='always'>
+          <mat-label></mat-label>
+          <textarea matInput placeholder="">{{selectedReference.description}}</textarea>
         </mat-form-field>
       </form>
 </div>
