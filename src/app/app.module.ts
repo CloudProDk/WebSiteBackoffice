@@ -23,6 +23,9 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import {MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS} from '@angular/material/dialog';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { ReferenceItemComponent } from './category/sub-category/references/reference-item/reference-item.component';
+
 
 
 
@@ -37,10 +40,14 @@ import {MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS} from '@angular/material/dia
     ReferenceEditComponent,
     ReferenceListComponent,
     HeaderComponent,
+
     MainNavComponent
   ],
   entryComponents: [
-    ReferenceEditComponent
+    ReferenceEditComponent,
+    MainNavComponent,
+    ReferenceItemComponent
+
   ],
   imports: [
     BrowserModule,
@@ -61,7 +68,8 @@ import {MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS} from '@angular/material/dia
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    MatDialogModule
+    MatDialogModule,
+    MatFormFieldModule
 
 
   ],
