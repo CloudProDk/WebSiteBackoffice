@@ -6,10 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./reference-item.component.scss']
 })
 export class ReferenceItemComponent implements OnInit {
+headerInput: String;
+descriptionInput: String;
 
   constructor() { }
 
   ngOnInit() {
   }
+
+ TilfojReference() {
+   
+ }
+
+
 
 }

@@ -22,6 +22,8 @@ import { MainNavComponent } from './main-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { ReferenceItemComponent } from './category/sub-category/references/reference-item/reference-item.component';
 
 
 
@@ -36,7 +38,8 @@ import { MatListModule } from '@angular/material/list';
     ReferenceEditComponent,
     ReferenceListComponent,
     HeaderComponent,
-    MainNavComponent
+    MainNavComponent,
+    ReferenceItemComponent
 
 
   ],
@@ -58,7 +61,8 @@ import { MatListModule } from '@angular/material/list';
     MatToolbarModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatFormFieldModule
 
 
   ],
