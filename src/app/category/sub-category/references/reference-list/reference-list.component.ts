@@ -1,8 +1,9 @@
+import { ReferenceComponent } from './../reference.component';
 import { ReferenceEditComponent } from './../reference-edit/reference-edit.component';
 import { Reference } from 'src/app/models/reference.model';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ReferenceService } from 'src/app/services/reference/reference.service';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 
 
 @Component({
@@ -28,7 +29,30 @@ export class ReferenceListComponent implements OnInit {
   }
 
   openDialog(): void {
-    const dialogRef = this.dialog.open(ReferenceEditComponent, {height: '50%', width: '50%'});
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.disableClose = false;
+    dialogConfig.autoFocus = true;
+    dialogConfig.data = {
+      header: this.selectedReferenceInListComp.header,
+      description: this.selectedReferenceInListComp.description
+    };
+    const dialogRef = this.dialog.open(ReferenceEditComponent, dialogConfig);
+
+  }
+
+  openAddDialog(): void {
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.disableClose = false;
+    dialogConfig.autoFocus = true;
+    dialogConfig.data = {
+      header: this.selectedReferenceInListComp.header,
+      description: this.selectedReferenceInListComp.description
+    };
+      
+    const dialogRef = this.dialog.open(ReferenceComponent, dialogConfig);
+
 
   }
 }
