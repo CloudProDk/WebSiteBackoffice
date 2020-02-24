@@ -1,19 +1,17 @@
-<div class="container">
-
-        
+<div class="container">        
     <div class="row">
-        <div class="col-xs-3"> <img routerLink = "/sub-category" class="rounded-circle" src="{{categoryObject.imagePath}}" 
+        <div class="col-xs-3"> <img routerLink = "/sub-category" class="rounded-circle" src="{{categoryCloudObject.imagePath}}" 
           alt="Generic placeholder image" width="140" height="140"> 
-          <h2>{{categoryObject.header}}</h2>
-          
-          <p>{{categoryObject.description}}</p>
-    
-            <button type="button" class="btn btn-info"(click)= "changeText()" (click) = "toggleDisplay()" >Ændre på Cloud teksten</button>
+          <h2>{{categoryCloudObject.header}}</h2>          
+          <p>{{categoryCloudObject.description}}</p>    
 
-
+            <button 
+              type="button" 
+              class="btn btn-info"
+              (click) = "toggleDisplay()" >
+              Ændre på Cloud teksten
+            </button>
         </div>
-
-
         <div class="">
             <div class="col-xs-3"> <img class="rounded-circle" src="https://www.logolynx.com/images/logolynx/s_08/087dd16819b99456866c0dc88cf5369d.jpeg" 
               alt="Generic placeholder image" width="140" height="140"> 
@@ -24,8 +22,7 @@
                 Vi benytter bl.a. Angular i vores webprogrammering</p>
         
                 <button type="button" class="btn btn-info">Ændre på Web teksten</button>
-            </div>
-          
+            </div>        
 
 
           <div class="">
@@ -62,6 +59,17 @@
               &nbsp;
               <button mat-raised-button color="warn" (click) = "toggleDisplay()">Fortryd</button>
             </mat-form-field>                
+              <mat-form-field floatLabel="always">              
+                <textarea 
+                  style="height: 200px;" 
+                  matInput placeholder="" 
+                  (input)="categoryHelperObject.description = $event.target.value">
+                    {{categoryCloudObject.description}}
+                </textarea>
+                <button mat-raised-button color="primary" (click) = "gemCloudText()" >Gem</button>
+                &nbsp;
+                <button mat-raised-button color="warn" (click) = "toggleDisplay()">Fortryd</button>
+              </mat-form-field>                
           </form>
         </div>
 
