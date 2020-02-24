@@ -29,8 +29,6 @@ export class ReferenceService {
 
   TilfojReference(Ref: Reference){
     this.listLength = this.list.push(Ref);
-    
-
   }
 
 }

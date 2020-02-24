@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ReferenceService } from 'src/app/services/reference/reference.service';
+import { Reference } from 'src/app/models/reference.model';
+
 
 @Component({
   selector: 'app-reference-item',
@@ -8,14 +11,18 @@ import { Component, OnInit } from '@angular/core';
 export class ReferenceItemComponent implements OnInit {
 headerInput: String;
 descriptionInput: String;
+refhelpObject: Reference = {header: '', description: ''}
 
-  constructor() { }
+  constructor(private referenceService: ReferenceService ) { }
 
   ngOnInit() {
   }
 
- TilfojReference() {
-   
+ TilfojReference(headerInput, descriptionInput) {
+   this.refhelpObject.header = headerInput;
+   this.refhelpObject.description =descriptionInput;
+   this.referenceService.TilfojReference(this.refhelpObject);
+   console.log("test");
  }
 
 
