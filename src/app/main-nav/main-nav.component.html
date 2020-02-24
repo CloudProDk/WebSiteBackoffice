@@ -6,7 +6,7 @@
         <a mat-list-item routerLink="/sub-category" >Cloud</a>
           <ul>
             <mat-nav-list class="sub-categories">
-              <a mat-list-item routerLink="/reference">IOT</a>
+              <a mat-list-item >IOT</a>
               <a mat-list-item >Azure</a>
               <a mat-list-item >Database</a>
             </mat-nav-list>
@@ -21,6 +21,7 @@
     <ng-content></ng-content>
   </mat-sidenav-content>
 </mat-sidenav-container>
+<button mat-button (click)="dothis()">Press me<button>
 <!-- 
 <mat-sidenav-container class="example-container" *ngIf="shouldRun">
   <mat-sidenav mode="side" opened>
