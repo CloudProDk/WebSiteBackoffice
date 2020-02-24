@@ -1,20 +1,18 @@
-import { ReferenceListComponent } from './category/sub-category/references/reference-list/reference-list.component';
-import { ReferenceEditComponent } from './category/sub-category/references/reference-edit/reference-edit.component';
+import { ReferenceListComponent } from './category/sub-category/reference/reference-list/reference-list.component';
+import { ReferenceEditComponent } from './category/sub-category/reference/reference-edit/reference-edit.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { MatSliderModule } from '@angular/material/slider';
 import {MatInputModule} from '@angular/material/input';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { MenuComponent } from './menu/menu.component';
+
 import { CategoryComponent } from './category/category.component';
 import { SubCategoryComponent } from './category/sub-category/sub-category.component';
-import { ReferenceComponent } from './category/sub-category/references/reference.component';
+import { ReferenceComponent } from './category/sub-category/reference/reference.component';
 import { AzureLoginComponent } from './azure-login/azure-login.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-
 import { Routes } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCheckboxModule} from '@angular/material/checkbox';
@@ -31,15 +29,12 @@ import { MatListModule } from '@angular/material/list';
   declarations: [
     AppComponent,
     HeaderComponent,
-    MenuComponent,
     CategoryComponent,
     SubCategoryComponent,
     ReferenceComponent,
     AzureLoginComponent,
-
     ReferenceEditComponent,
     ReferenceListComponent,
-
     HeaderComponent,
     MainNavComponent
 
