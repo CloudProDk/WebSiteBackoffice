@@ -17,8 +17,10 @@ export class CategoryComponent implements OnInit {
   constructor(private categoryService: CategoryService) { }
 
   ngOnInit() {
-  this.listOfCategories = this.categoryService.listOfCategory();
-  this.categoryCloudObject = this.listOfCategories[0];
+    console.log('onInit category');
+    this.listOfCategories = this.categoryService.listOfCategory();
+    console.log(this.listOfCategories);
+    this.categoryCloudObject = this.listOfCategories[0];
   // console.log(this.categoryObject.header);
   }
 
