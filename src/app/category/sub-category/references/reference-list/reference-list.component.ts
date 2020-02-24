@@ -10,12 +10,21 @@ import { ReferenceService } from 'src/app/services/reference/reference.service';
 })
 export class ReferenceListComponent implements OnInit {
   listOfRefs: Array<Reference> = [];
+  // @Output() activeObject = new EventEmitter<Reference>();
+  selectedReferenceInListComp: Reference = {header: '', description: ''};
 
-  constructor(private listService: ReferenceService) { }
+  constructor(private referenceService: ReferenceService) { }
 
   ngOnInit() {
-    this.listOfRefs = this.listService.listOfReferences();
+    this.listOfRefs = this.referenceService.listOfReferences();
     console.log(this.listOfRefs);
+  }
+
+  selectedItem( ref: Reference) {
+    // this.activeObject.emit(ref);
+    this.selectedReferenceInListComp = ref;
+    console.log(ref);
+    console.log('set selected reference in ref service');
   }
 }
 

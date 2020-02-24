@@ -22,7 +22,7 @@
         </svg>
     </mat-icon>
       &nbsp;
-    <mat-icon>
+    <mat-icon (click)="clickTest()">
         <svg xmlns="http://www.w3.org/2000/svg" onclick="" width="24" height="24" 
             viewBox="0 0 24 24" fill="none" stroke="currentColor" 
             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
@@ -34,15 +34,15 @@
       
 </div>
 <div>
-    <form class="example-form">
-        <mat-form-field class="example-full-width">
-          <mat-label>Title</mat-label>
-          <input matInput placeholder="" value="">
+    <form class="example-form" >
+        <mat-form-field class="example-full-width" floatLabel='always'>
+          <mat-label></mat-label>
+          <input matInput placeholder="" value="{{selectedReference.header}}">
         </mat-form-field> <br>
       
-        <mat-form-field class="example-full-width">
-          <mat-label>Description</mat-label>
-          <textarea matInput placeholder=""></textarea>
+        <mat-form-field class="example-full-width" floatLabel='always'>
+          <mat-label></mat-label>
+          <textarea matInput placeholder="">{{selectedReference.description}}</textarea>
         </mat-form-field>
       </form>
 </div>

@@ -10,6 +10,7 @@ export class ReferenceService {
   ref2: Reference = {header: 'Movia', description: 'Database til Movias online platform '};
   ref3: Reference = {header: 'Silvan', description: 'ttshdsgdhjs7 edkhedhei jdkjdksjd jskdjskjd sjkds'};
   listLength: number;
+  selectedReference: Reference = {header: ' qqqq', description: ' qqqqq'};
 
   constructor() {  }
 
@@ -17,7 +18,13 @@ export class ReferenceService {
     this.listLength = this.list.push(this.ref1, this.ref2, this.ref3);
     return this.list;
   }
-  onSelet() {
 
+  setSelectedReference(ref: Reference) {
+    this.selectedReference = ref;
   }
+
+  getSelectedReference(): Reference {
+    return this.selectedReference;
+  }
+
 }
