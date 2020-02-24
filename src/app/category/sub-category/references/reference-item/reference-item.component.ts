@@ -9,9 +9,9 @@ import { Reference } from 'src/app/models/reference.model';
   styleUrls: ['./reference-item.component.scss']
 })
 export class ReferenceItemComponent implements OnInit {
-headerInput: String;
-descriptionInput: String;
-refhelpObject: Reference = {header: '', description: ''}
+headerInput: string;
+descriptionInput: string;
+refhelpObject: Reference = {header: '', description: '' };
 
   constructor(private referenceService: ReferenceService ) { }
 
@@ -20,7 +20,7 @@ refhelpObject: Reference = {header: '', description: ''}
 
  TilfojReference(headerInput, descriptionInput) {
    this.refhelpObject.header = headerInput;
-   this.refhelpObject.description =descriptionInput;
+   this.refhelpObject.description = descriptionInput;
    this.referenceService.TilfojReference(this.refhelpObject);
    console.log("test");
  }

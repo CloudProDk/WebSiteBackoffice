@@ -40,14 +40,13 @@ import { ReferenceItemComponent } from './category/sub-category/references/refer
     ReferenceEditComponent,
     ReferenceListComponent,
     HeaderComponent,
-
-    MainNavComponent
+    MainNavComponent,
+    ReferenceItemComponent
   ],
   entryComponents: [
     ReferenceEditComponent,
     MainNavComponent,
     ReferenceItemComponent
-
   ],
   imports: [
     BrowserModule,
