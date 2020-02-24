@@ -22,6 +22,7 @@ import { MainNavComponent } from './main-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import {MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS} from '@angular/material/dialog';
 
 
 
@@ -37,8 +38,9 @@ import { MatListModule } from '@angular/material/list';
     ReferenceListComponent,
     HeaderComponent,
     MainNavComponent
-
-
+  ],
+  entryComponents: [
+    ReferenceEditComponent
   ],
   imports: [
     BrowserModule,
@@ -58,11 +60,12 @@ import { MatListModule } from '@angular/material/list';
     MatToolbarModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatDialogModule
 
 
   ],
-  providers: [],
+  providers: [{provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
