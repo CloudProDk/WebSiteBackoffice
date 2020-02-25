@@ -23,12 +23,12 @@ export class SubCategoryService {
 
     constructor() { }
 
-    listOfCategory() {
+    listOfSubCategory() {
      this.listLength = this.list.push(this.subCat1, this.subCat2, this.subCat3);
      return this.list;
     }
   
-    saveCloudData(text: string) {
+    saveChangesData(text: string) {
     this.subCat1.description = text;
     console.log('Inside CategoryService' + this.subCat1.description);
   }

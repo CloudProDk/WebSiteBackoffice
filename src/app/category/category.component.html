@@ -8,7 +8,7 @@
             <button 
               type="button" 
               class="btn btn-info"
-              (click) = "toggleDisplay()" >
+              (click) = "openDialog()" >
               Ændre på Cloud teksten
             </button>
         </div>
@@ -51,21 +51,5 @@
             </div>
            </div>
         </div>
-        <div class="col-xs-12">
-            <form class="example-form" [hidden] = "isShow">
-              <mat-form-field floatLabel="always">              
-                <textarea 
-                  style="height: 200px;" 
-                  matInput placeholder="" 
-                  (input)="categoryHelperObject.description = $event.target.value">
-                    {{categoryCloudObject.description}}
-                </textarea>
-                <button mat-raised-button color="primary" (click) = "gemCloudText()" >Gem</button>
-                &nbsp;
-                <button mat-raised-button color="warn" (click) = "toggleDisplay()">Fortryd</button>
-              </mat-form-field>                
-          </form>
-        </div>
-
     </div>
 </div>

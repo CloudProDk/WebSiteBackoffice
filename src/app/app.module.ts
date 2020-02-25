@@ -25,6 +25,7 @@ import { MatListModule } from '@angular/material/list';
 import {MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS} from '@angular/material/dialog';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { ReferenceItemComponent } from './category/sub-category/references/reference-item/reference-item.component';
+import { CategoryEditFormComponent } from './category/category-edit-form/category-edit-form.component';
 
 
 
@@ -41,12 +42,14 @@ import { ReferenceItemComponent } from './category/sub-category/references/refer
     ReferenceListComponent,
     HeaderComponent,
     MainNavComponent,
-    ReferenceItemComponent
+    ReferenceItemComponent,
+    CategoryEditFormComponent
   ],
   entryComponents: [
     ReferenceEditComponent,
     MainNavComponent,
-    ReferenceItemComponent
+    ReferenceItemComponent,
+    CategoryEditFormComponent
   ],
   imports: [
     BrowserModule,
