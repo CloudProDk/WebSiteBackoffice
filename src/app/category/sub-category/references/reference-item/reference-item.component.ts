@@ -18,9 +18,9 @@ refhelpObject: Reference = {header: '', description: ''}
   ngOnInit() {
   }
 
- TilfojReference(headerInput, descriptionInput) {
-   this.refhelpObject.header = headerInput;
-   this.refhelpObject.description =descriptionInput;
+ TilfojReference() {
+   this.headerInput= this.refhelpObject.header;
+   this.descriptionInput = this.refhelpObject.description;
    this.referenceService.TilfojReference(this.refhelpObject);
    console.log("test");
  }
