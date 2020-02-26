@@ -22,6 +22,7 @@ import { MainNavComponent } from './main-nav/main-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
+import { RouteList } from './shared/routelist';
 
 
 
@@ -62,7 +63,7 @@ import { MatListModule } from '@angular/material/list';
 
 
   ],
-  providers: [],
+  providers: [RouteList],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -6,11 +6,9 @@ import { Router } from '@angular/router';
 })
 export class RouterService {
 
-  
-
   constructor(public router: Router) { }
 
-  Navigate(route: any){
+  Navigate(route: any) {
     this.router.navigate([route]);
   }
 
