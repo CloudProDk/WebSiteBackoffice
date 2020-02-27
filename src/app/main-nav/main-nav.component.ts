@@ -25,7 +25,7 @@ export class MainNavComponent implements OnInit {
 
   dothis() {
     console.log('pressed');
-    this.routerSvc.Navigate('/references');
+    this.routerSvc.Navigate('/sub-category');
   }
 
 
