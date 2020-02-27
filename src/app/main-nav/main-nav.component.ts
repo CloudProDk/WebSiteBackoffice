@@ -23,9 +23,10 @@ export class MainNavComponent implements OnInit {
 
   constructor(private breakpointObserver: BreakpointObserver, private routerSvc: RouterService, public routes: RouteList) {}
 
-  dothis() {
+  dothis(route: string) {
     console.log('pressed');
-    this.routerSvc.Navigate('/sub-category');
+    this.routerSvc.Navigate(route);
+    console.log(route)
   }
 
 

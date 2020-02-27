@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Category } from '../models/category.model';
 import { CategoryService } from '../services/category/category.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-category',
@@ -9,6 +10,7 @@ import { CategoryService } from '../services/category/category.service';
 })
 export class CategoryComponent implements OnInit {
 
+  routeName: any;
   listOfCategories: Array<Category>;
   categoryCloudObject: Category;
   categoryHelperObject: Category = {imagePath: ' ', header: ' ', description: ''};
@@ -17,6 +19,7 @@ export class CategoryComponent implements OnInit {
   constructor(private categoryService: CategoryService) { }
 
   ngOnInit() {
+
     console.log('onInit category');
     this.listOfCategories = this.categoryService.listOfCategory();
     console.log(this.listOfCategories);
