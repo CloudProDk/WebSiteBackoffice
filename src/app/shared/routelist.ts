@@ -16,7 +16,7 @@ export interface Route {
 const routes = [
     {
         name: 'Cloud',
-        route: 'cloud',
+        route: '/cloud',
         type: 'Main',
         routes: [
             {name: 'Microsoft Azure', route: '/microsoft-azure', type: 'sub'},
@@ -26,7 +26,7 @@ const routes = [
     },
     {
         name: 'Web',
-        route: 'web',
+        route: '/web',
         type: 'Main',
         routes: [
             {name: 'Content Management System', route: '/content-management-system', type: 'sub'},
@@ -35,7 +35,7 @@ const routes = [
         ]
     },    {
         name: 'Mobile',
-        route: 'mobile',
+        route: '/mobile',
         type: 'Main',
         routes: [
             {name: 'IOS', route: '/ios', type: 'sub'},
@@ -45,7 +45,7 @@ const routes = [
     },
     {
         name: 'Support',
-        route: 'support',
+        route: '/support',
         type: 'Main',
         routes: [
             {name: 'IT-as-a-service', route: '/it-as-a-service', type: 'sub'},

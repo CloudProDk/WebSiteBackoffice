@@ -12,9 +12,10 @@ export class SubCategoryComponent implements OnInit, OnDestroy {
   constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
-    this.activatedRoute.params.subscribe(params => {
-      this.routeName = params
-    })
+    // this.activatedRoute.params.subscribe(params => {
+    //   this.routeName = params.get("sub-category");
+    // })
+    // console.log(this.routeName);
 
   }
 

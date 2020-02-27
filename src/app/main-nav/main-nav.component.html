@@ -3,7 +3,7 @@
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
       <mat-list-item *ngFor="let route of routelist" routerLinkActive="selected">
-          <a (click)=dothis(route.route)>
+          <a (click)="dothis('/sub-category' + route.route)">
               <span>{{ route.name }}</span>
           </a>
     </mat-list-item>
