@@ -1,5 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
+import { SubCategory } from 'src/app/models/sub.category.model';
+import { SubCategoryService } from 'src/app/services/sub-category/sub-category.service';
 
 @Component({
   selector: 'app-sub-category',
@@ -8,14 +10,30 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class SubCategoryComponent implements OnInit, OnDestroy {
   routeName: any;
+  sub: any;
+  listOfSubCategory: SubCategory[] = [];
 
-  constructor(private activatedRoute: ActivatedRoute) { }
+  constructor(private activatedRoute: ActivatedRoute, private subCategoryService: SubCategoryService) { }
 
   ngOnInit() {
-    // this.activatedRoute.params.subscribe(params => {
-    //   this.routeName = params.get("sub-category");
-    // })
-    // console.log(this.routeName);
+    this.listOfSubCategory = this.subCategoryService.getSubCategory()
+    this.activatedRoute.paramMap.subscribe(params => {
+      this.sub = params.get("sub-category")
+      if (this.sub === 'cloud') {
+        // skal havde den til at kun at vise den item i listen som har fk="cloud"
+
+        console.log("cloud er valgt")
+      }
+      if (this.sub === 'web') {
+        console.log("web er valgt")
+      }
+      if (this.sub === 'mobile') {
+        console.log("mobile er valgt")
+      }
+      if (this.sub === 'support') {
+        console.log("support er valgt")
+      }
+    })
 
   }
 

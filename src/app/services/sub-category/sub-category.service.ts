@@ -7,6 +7,32 @@ import { SubCategory } from 'src/app/models/sub.category.model';
 export class SubCategoryService {
   list: Array<SubCategory> = [];
   listLength: number;
+
+  private testSubCategory: SubCategory[] = [
+    {
+      header: 'cloud1',
+      description: 'cloud1 subcategory descriptio',
+      fk: 'cloud'
+    },
+    {
+      header: 'web1',
+      description: 'web1 subcategory descriptio',
+      fk: 'web'
+    },
+    {
+      header: 'mobile1',
+      description: 'mobile1 subcategory descriptio',
+      fk: 'mobile'
+    },
+    {
+      header: 'support1',
+      description: 'support1 subcategory descriptio',
+      fk: 'support'
+    },
+
+
+   
+  ]
   
   subCat1: SubCategory = {
                             header: 'Miscrosoft Azure',
@@ -21,7 +47,19 @@ export class SubCategoryService {
                             description: 'Ny løsning, migrering af eksisterende, eller kombination af begge? Vi rådgiver, designer, udvikler, implementerer og drifter sikre IT infrastruktur projekter baseret på Microsoft Azure.'
                           };
 
+
+
+
     constructor() { }
+
+    getSubCategory() {
+      return this.testSubCategory.slice()
+    }
+
+    testCategory(test: string) {
+      return this.testCategory[test]
+
+    }
 
     listOfCategory() {
      this.listLength = this.list.push(this.subCat1, this.subCat2, this.subCat3);

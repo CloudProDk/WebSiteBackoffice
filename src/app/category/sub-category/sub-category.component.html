@@ -2,7 +2,16 @@
 
 
     <div class="row">
+
+      <div *ngFor="let subCategory of listOfSubCategory">
         <div class="col-xs-4"> 
+          <h2>{{subCategory.header}}</h2>
+          <p>{{subCategory.description}}</p>
+            <button type="button" class="btn btn-info">Ændre på Cloud teksten</button>
+        </div>
+
+      </div>
+        <!-- <div class="col-xs-4"> 
           <h2 routerLink="/references" style="cursor:pointer;">Microsoft Azure</h2>
           
           <p>Ny løsning, migrering af eksisterende, eller kombination af begge?</p>
@@ -44,7 +53,7 @@
             </div>
           </div>
 
-         
+          -->
 
     </div>
 </div>
