@@ -23,10 +23,26 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { RouteList } from './shared/routelist';
+import { MsAdalAngular6Module } from 'microsoft-adal-angular6';
+import { AuthenticationGuard } from 'microsoft-adal-angular6';
 
+
+export function getAdalConfig() {
+  return {
+      tenant: '<YOUR TENANT>',
+      clientId: '<YOUR CLIENT / APP ID>',
+      redirectUri: window.location.origin,
+      endpoints: { 
+        "https://localhost/Api/": "xxx-bae6-4760-b434-xxx",
+      },
+      navigateToLoginRequestUrl: false,
+      cacheLocation: '<localStorage / sessionStorage>',
+    };
+}
 
 
 @NgModule({
+  providers: [AuthenticationGuard, RouteList], 
   declarations: [
     AppComponent,
     HeaderComponent,
@@ -37,11 +53,14 @@ import { RouteList } from './shared/routelist';
     ReferenceEditComponent,
     ReferenceListComponent,
     HeaderComponent,
-    MainNavComponent
+    MainNavComponent,
+    MsAdalAngular6Module,
+    
 
 
   ],
   imports: [
+    MsAdalAngular6Module.forRoot(getAdalConfig),
     BrowserModule,
     AppRoutingModule,
 
@@ -63,7 +82,7 @@ import { RouteList } from './shared/routelist';
 
 
   ],
-  providers: [RouteList],
+  
   bootstrap: [AppComponent]
 })
 export class AppModule { }
