@@ -29,6 +29,11 @@ cat4: Category = {imagePath: 'https://www.seekpng.com/png/detail/28-287453_outbo
                   };
   constructor(private http: HttpClient) { }
 
+  getAllCategories() {
+    return this.http
+    .get<Category[]>('https://localhost:44313/api/category');
+  }
+
   listOfCategory() {
    this.listLength = this.list.push(this.cat1, this.cat2, this.cat3, this.cat4);
    return this.list;
@@ -37,7 +42,6 @@ cat4: Category = {imagePath: 'https://www.seekpng.com/png/detail/28-287453_outbo
   saveCloudData(text: string) {
     this.cat1.description = text;
     console.log('Inside CategoryService' + this.cat1.description);
-
 }
 
 }

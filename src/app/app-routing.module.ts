@@ -16,8 +16,7 @@ const routes: Routes = [
   { path: 'sub-category', component: SubCategoryComponent},
   {path: 'reference-list', component: ReferenceListComponent},
   {path: 'references', component: ReferenceComponent},
-  {path: 'reference-item', component: ReferenceItemComponent},
-  
+  {path: 'reference-item', component: ReferenceItemComponent}
 
 ];
 
