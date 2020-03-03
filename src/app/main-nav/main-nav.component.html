@@ -4,10 +4,10 @@
     <mat-nav-list>    
     <mat-accordion>
       <mat-expansion-panel *ngFor="let route of routelist" routerLinkActive="selected">
-        <mat-expansion-panel-header  >
+        <mat-expansion-panel-header (click)="dothis(route.route)">
           <mat-panel-title>
-            <div >
-              <a (click)="dothis('/sub-category' + route.route)">
+            <div>
+              <a>
                   <span>{{ route.name }}</span>
               </a>
             </div>
@@ -15,7 +15,7 @@
         </mat-expansion-panel-header>
         <span style="text-align: left;">
           <mat-list-item *ngFor="let childItem of route.routes" >
-            <div style="font-size: 14px;"> 
+            <div style="font-size: 14px;" (click)="dothis(route.route + childItem.route)"> 
               {{childItem.name}}
             </div>
           </mat-list-item>

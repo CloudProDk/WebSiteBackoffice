@@ -15,7 +15,7 @@ const routes: Routes = [
 
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: CategoryComponent},
-  { path: 'sub-category/:sub-category', component: SubCategoryComponent},
+  { path: ':sub-category', component: SubCategoryComponent},
     // children: [
     //   { path: 'cloud', component: SubCategoryComponent},
     //   { path: 'web', component: SubCategoryComponent},
