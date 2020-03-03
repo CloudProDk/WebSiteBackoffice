@@ -37,11 +37,11 @@ export class SubCategoryComponent implements OnInit, OnDestroy {
   constructor(private activatedRoute: ActivatedRoute, private subCategoryService: SubCategoryService,  public dialog: MatDialog) { }
 
   ngOnInit() {
-    console.log(this.listOfSubCats);
-    this.azureObject = this.listOfSubCats[0];
-    this.iotObject = this.listOfSubCats[1];
-    this.databaseObject = this.listOfSubCats[2];
-    console.log(this.azureObject);
+    // console.log(this.listOfSubCats);
+    // this.azureObject = this.listOfSubCats[0];
+    // this.iotObject = this.listOfSubCats[1];
+    // this.databaseObject = this.listOfSubCats[2];
+    // console.log(this.azureObject);
     
     this.listOfSubCategory = this.subCategoryService.getSubCategory();
     this.activatedRoute.paramMap.subscribe(params => {
