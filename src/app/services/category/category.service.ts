@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Category } from 'src/app/models/category.model';
 import { CategoryComponent } from 'src/app/category/category.component';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -26,17 +27,21 @@ cat4: Category = {imagePath: 'https://www.seekpng.com/png/detail/28-287453_outbo
                   header: 'Support',
                   description: 'Lad os håndtere din IT for dig Vi leverer abonnements baserede IT løsninger til mindre virksomheder som ikke kan eller vil selv. Det kalder vi IT-as-a-Service.'
                   };
-  constructor() { }
+  constructor(private http: HttpClient) { }
+
+  getAllCategories() {
+    return this.http
+    .get<Category[]>('https://localhost:44313/api/category');
+  }
 
   listOfCategory() {
    this.listLength = this.list.push(this.cat1, this.cat2, this.cat3, this.cat4);
    return this.list;
   }
-saveCloudData(text: string) {
-  this.cat1.description = text;
-  console.log('Inside CategoryService' + this.cat1.description);
 
+  saveCloudData(text: string) {
+    this.cat1.description = text;
+    console.log('Inside CategoryService' + this.cat1.description);
 }
-// test
 
 }

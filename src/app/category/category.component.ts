@@ -61,5 +61,4 @@ export class CategoryComponent implements OnInit {
 
     const dialogRef = this.dialog.open(CategoryEditFormComponent, dialogConfig);
   }
-
 }
