@@ -10,8 +10,18 @@ export class SubCategoryService {
 
   private testSubCategory: SubCategory[] = [
     {
-      header: 'cloud1',
+      header: 'Microsoft Azure',
       description: 'cloud1 subcategory descriptio',
+      fk: 'cloud'
+    },
+    {
+      header: 'Internet of things',
+      description: 'cloud2 subcategory descriptio',
+      fk: 'cloud'
+    },
+    {
+      header: 'Database',
+      description: 'cloud3 subcategory descriptio',
       fk: 'cloud'
     },
     {
@@ -53,11 +63,11 @@ export class SubCategoryService {
     constructor() { }
 
     getSubCategory() {
-      return this.testSubCategory.slice()
+      return this.testSubCategory;
     }
 
     testCategory(test: string) {
-      return this.testCategory[test]
+      return this.testCategory[test];
 
     }
 
