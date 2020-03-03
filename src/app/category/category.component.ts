@@ -14,7 +14,7 @@ export class CategoryComponent implements OnInit {
   listOfCategories: Array<Category>;
   categoryCloudObject: Category;
   categoryHelperObject: Category = {imagePath: ' ', header: ' ', description: ''};
-  isShow = true;
+  isShow = true; 
 
   constructor(private categoryService: CategoryService) { }
 
