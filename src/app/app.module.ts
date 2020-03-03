@@ -32,7 +32,7 @@ export function getAdalConfig() {
       tenant: '<YOUR TENANT>',
       clientId: '<YOUR CLIENT / APP ID>',
       redirectUri: window.location.origin,
-      endpoints: { 
+      endpoints: {
         "https://localhost/Api/": "xxx-bae6-4760-b434-xxx",
       },
       navigateToLoginRequestUrl: false,
@@ -42,7 +42,7 @@ export function getAdalConfig() {
 
 
 @NgModule({
-  providers: [AuthenticationGuard, RouteList], 
+  providers: [AuthenticationGuard, RouteList],
   declarations: [
     AppComponent,
     HeaderComponent,
@@ -54,10 +54,7 @@ export function getAdalConfig() {
     ReferenceListComponent,
     HeaderComponent,
     MainNavComponent,
-    MsAdalAngular6Module,
-    
-
-
+    MsAdalAngular6Module
   ],
   imports: [
     MsAdalAngular6Module.forRoot(getAdalConfig),
@@ -82,7 +79,6 @@ export function getAdalConfig() {
 
 
   ],
-  
   bootstrap: [AppComponent]
 })
 export class AppModule { }

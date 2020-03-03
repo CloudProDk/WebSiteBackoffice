@@ -16,13 +16,12 @@ export class SubCategoryComponent implements OnInit, OnDestroy {
   constructor(private activatedRoute: ActivatedRoute, private subCategoryService: SubCategoryService) { }
 
   ngOnInit() {
-    this.listOfSubCategory = this.subCategoryService.getSubCategory()
+    this.listOfSubCategory = this.subCategoryService.getSubCategory();
     this.activatedRoute.paramMap.subscribe(params => {
       this.sub = params.get("sub-category")
-      if (this.sub === 'cloud') {
+      
+      if (this.sub === 'cloud') {        
         // skal havde den til at kun at vise den item i listen som har fk="cloud"
-
-        console.log("cloud er valgt")
       }
       if (this.sub === 'web') {
         console.log("web er valgt")
