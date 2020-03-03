@@ -1,17 +1,27 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav class="sidenav" mode="side" opened>
     <mat-toolbar>Menu</mat-toolbar>
-    <mat-nav-list>
-      <mat-list-item *ngFor="let route of routelist" routerLinkActive="selected">
-          <a (click)="dothis('/sub-category' + route.route)">
-              <span>{{ route.name }}</span>
-          </a>
-          <mat-nav-list>
-            <mat-list-item>
-              
-            </mat-list-item>
-          </mat-nav-list>
-    </mat-list-item>
+    <mat-nav-list>    
+    <mat-accordion>
+      <mat-expansion-panel *ngFor="let route of routelist" routerLinkActive="selected">
+        <mat-expansion-panel-header  >
+          <mat-panel-title>
+            <div >
+              <a (click)="dothis('/sub-category' + route.route)">
+                  <span>{{ route.name }}</span>
+              </a>
+            </div>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <span style="text-align: left;">
+          <mat-list-item *ngFor="let childItem of route.routes" >
+            <div style="font-size: 14px;"> 
+              {{childItem.name}}
+            </div>
+          </mat-list-item>
+        </span>
+      </mat-expansion-panel>
+    </mat-accordion>
 </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>

@@ -26,7 +26,7 @@ export class MainNavComponent implements OnInit {
   dothis(route: string) {
     console.log('pressed');
     this.routerSvc.Navigate(route);
-    console.log(route)
+    console.log(route);
   }
 
 
