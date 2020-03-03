@@ -28,6 +28,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS} from '@angular/material/dialog';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { ReferenceItemComponent } from './category/sub-category/references/reference-item/reference-item.component';
+import { CategoryEditFormComponent } from './category/category-edit-form/category-edit-form.component';
 
 
 
@@ -43,14 +44,15 @@ import { ReferenceItemComponent } from './category/sub-category/references/refer
     ReferenceEditComponent,
     ReferenceListComponent,
     HeaderComponent,
-
-    MainNavComponent
+    MainNavComponent,
+    ReferenceItemComponent,
+    CategoryEditFormComponent
   ],
   entryComponents: [
     ReferenceEditComponent,
     MainNavComponent,
-    ReferenceItemComponent
-
+    ReferenceItemComponent,
+    CategoryEditFormComponent
   ],
   imports: [
     BrowserModule,

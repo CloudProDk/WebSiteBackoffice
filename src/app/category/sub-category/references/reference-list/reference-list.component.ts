@@ -4,6 +4,7 @@ import { Reference } from 'src/app/models/reference.model';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ReferenceService } from 'src/app/services/reference/reference.service';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { ReferenceItemComponent } from '../reference-item/reference-item.component';
 
 
 @Component({
@@ -46,14 +47,10 @@ export class ReferenceListComponent implements OnInit {
 
     dialogConfig.disableClose = false;
     dialogConfig.autoFocus = true;
-    dialogConfig.data = {
-      header: this.selectedReferenceInListComp.header,
-      description: this.selectedReferenceInListComp.description
-    };
-      
-    const dialogRef = this.dialog.open(ReferenceComponent, dialogConfig);
+    dialogConfig.height = '50%';
+    dialogConfig.width = '50%';
 
-
+    const dialogRef = this.dialog.open(ReferenceItemComponent, dialogConfig);
   }
 }
 
