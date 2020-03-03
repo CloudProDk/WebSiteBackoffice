@@ -29,6 +29,7 @@ import {MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS} from '@angular/material/dia
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { ReferenceItemComponent } from './category/sub-category/references/reference-item/reference-item.component';
 import { CategoryEditFormComponent } from './category/category-edit-form/category-edit-form.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -57,13 +58,11 @@ import { CategoryEditFormComponent } from './category/category-edit-form/categor
   imports: [
     BrowserModule,
     AppRoutingModule,
-
     NoopAnimationsModule,
     MatSliderModule,
     MatButtonModule,
     MatCheckboxModule,
     MatInputModule,
-
     BrowserAnimationsModule,
     MatCheckboxModule,
     MatMenuModule,
@@ -73,16 +72,14 @@ import { CategoryEditFormComponent } from './category/category-edit-form/categor
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-
     MatExpansionModule,
-
-
     MatDialogModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    HttpClientModule
 
 
   ],
-  providers: [RouteList,{provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}],
+  providers: [RouteList, {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}],
 
   bootstrap: [AppComponent]
 })

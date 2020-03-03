@@ -15,20 +15,13 @@ import { SubCategoryService } from 'src/app/services/sub-category/sub-category.s
   styleUrls: ['./sub-category.component.scss']
 })
 
- 
 
-
-
-  
-    
 export class SubCategoryComponent implements OnInit, OnDestroy {
-  
-   listOfSubCats: Array<SubCategory>;
+  listOfSubCats: Array<SubCategory>;
   azureObject: SubCategory;
   iotObject: SubCategory;
   databaseObject: SubCategory;
   object2send2DialogBox: SubCategory = {header: ' ', description: ' '};
-  
   routeName: any;
   sub: any;
   listOfSubCategory: SubCategory[] = [];
