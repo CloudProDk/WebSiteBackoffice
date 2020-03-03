@@ -11,12 +11,22 @@ import { ReferenceItemComponent } from './category/sub-category/references/refer
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/category', pathMatch: 'full' },
-  { path: 'category', component: CategoryComponent},
-  { path: 'sub-category', component: SubCategoryComponent},
+
+
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', component: CategoryComponent},
+  { path: 'sub-category/:sub-category', component: SubCategoryComponent},
+    // children: [
+    //   { path: 'cloud', component: SubCategoryComponent},
+    //   { path: 'web', component: SubCategoryComponent},
+    //   { path: 'mobile', component: SubCategoryComponent},
+    //   { path: 'support', component: SubCategoryComponent}
+    // ]},
   {path: 'reference-list', component: ReferenceListComponent},
   {path: 'references', component: ReferenceComponent},
   {path: 'reference-item', component: ReferenceItemComponent}
+
+
 
 ];
 

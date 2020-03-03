@@ -1,8 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Category } from '../models/category.model';
 import { CategoryService } from '../services/category/category.service';
+
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { CategoryEditFormComponent } from './category-edit-form/category-edit-form.component';
+
+import { ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-category',
@@ -11,6 +15,7 @@ import { CategoryEditFormComponent } from './category-edit-form/category-edit-fo
 })
 export class CategoryComponent implements OnInit {
 
+  routeName: any;
   listOfCategories: Array<Category>;
   categoryCloudObject: Category;
   categoryHelperObject: Category = {imagePath: ' ', header: ' ', description: ''};
@@ -18,6 +23,7 @@ export class CategoryComponent implements OnInit {
   constructor(private categoryService: CategoryService, public dialog: MatDialog) { }
 
   ngOnInit() {
+
     console.log('onInit category');
     this.listOfCategories = this.categoryService.listOfCategory();
     console.log(this.listOfCategories);
