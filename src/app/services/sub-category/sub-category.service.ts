@@ -57,11 +57,4 @@ export class SubCategoryService {
       return this.testCategory[test];
 
     }
-
-
-  
-    saveChangesData(text: string) {
-    this.subCat1.description = text;
-    console.log('Inside CategoryService' + this.subCat1.description);
-  }
 }
