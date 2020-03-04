@@ -7,6 +7,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { SubCategory } from 'src/app/models/sub.category.model';
 import { SubCategoryService } from 'src/app/services/sub-category/sub-category.service';
+import { Subscription } from 'rxjs';
 
 
 @Component({
@@ -26,6 +27,7 @@ export class SubCategoryComponent implements OnInit, OnDestroy {
   sub: any;
   listOfSubCategory: SubCategory[] = [];
   sortedList: SubCategory[] = [];
+  subscription: Subscription;
 
   constructor(private activatedRoute: ActivatedRoute, private subCategoryService: SubCategoryService,  public dialog: MatDialog) { }
 
@@ -37,16 +39,16 @@ export class SubCategoryComponent implements OnInit, OnDestroy {
     // console.log(this.azureObject);
     
     this.listOfSubCategory = this.subCategoryService.getSubCategory();
-    this.activatedRoute.paramMap.subscribe(params => {
+    this.subscription = this.activatedRoute.paramMap.subscribe(params => {
       this.sub = params.get("sub-category")
       this.sortedList = this.listOfSubCategory.filter(x => x.fk === this.sub);
-
+      console.log(this.sortedList)
     });
 
   }
 
   ngOnDestroy() {
-
+    this.subscription.unsubscribe();
   }
 
   clickedButton(name: string) {
