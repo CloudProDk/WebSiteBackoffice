@@ -1,51 +1,15 @@
 <div class="container" >
     <div class="row">
-
       <div *ngFor="let subCategory of sortedList">
-        <div class="col-xs-4"> 
-
+        <div class="col-xs-4">
           <h2>{{subCategory.header}}</h2>
           <p>{{subCategory.description}}</p>
-            <button type="button" class="btn btn-info">Ændre på Cloud teksten</button>
+            <button type="button" 
+                    class="btn btn-info"
+                    (click)="openDialog(subCategory.header, subCategory.description)">
+                      Ændre på Cloud teksten
+            </button>
         </div>
-
-      </div>
-        <!-- <div class="col-xs-4"> 
-          <h2 routerLink="/references" style="cursor:pointer;">Microsoft Azure</h2>
-
-          
-          <p>{{azureObject.description}}</p>
-            
-            <button type="button" class="btn btn-info" (click)=" clickedButton('azure'); openDialog();" >Ændre på Cloud teksten</button>
-        </div>
-
-
-        <div class="">
-            <div class="col-xs-4"> 
-              <h2 id="iot">{{iotObject.header}}</h2>
-              
-              <p>{{iotObject.description}}</p>
-
-              <br>
-
-                <button type="button" class="btn btn-info" (click)="clickedButton('iot'); openDialog()">Ændre på Web teksten</button>
-            </div>
-          </div>
-
-
-          <div class="">
-            <div class="col-xs-4"> 
-              <h2 id="database">{{databaseObject.header}}</h2>
-              
-              <p>{{databaseObject.description}}</p>
-                
-                <br>
-
-                <button type="button" class="btn btn-info" (click)=" clickedButton('database'); openDialog() ">Ændre på Mobile teksten</button>
-            </div>
-          </div>
-
-          -->
-
+      </div>        
     </div>
 </div>

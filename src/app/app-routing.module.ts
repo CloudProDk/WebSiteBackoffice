@@ -15,10 +15,9 @@ const routes: Routes = [
 
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: CategoryComponent},
+
   { path: 'references/:references', component: ReferenceComponent},
   { path: 'sub-category/:sub-category', component: SubCategoryComponent}
-
-
 
 ];
 

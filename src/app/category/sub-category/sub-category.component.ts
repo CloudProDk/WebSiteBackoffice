@@ -18,11 +18,6 @@ import { Subscription } from 'rxjs';
 
 
 export class SubCategoryComponent implements OnInit, OnDestroy {
-  listOfSubCats: Array<SubCategory>;
-  azureObject: SubCategory;
-  iotObject: SubCategory;
-  databaseObject: SubCategory;
-  object2send2DialogBox: SubCategory = {header: ' ', description: ' '};
   routeName: any;
   sub: any;
   listOfSubCategory: SubCategory[] = [];
@@ -32,20 +27,18 @@ export class SubCategoryComponent implements OnInit, OnDestroy {
   constructor(private activatedRoute: ActivatedRoute, private subCategoryService: SubCategoryService,  public dialog: MatDialog) { }
 
   ngOnInit() {
-    // console.log(this.listOfSubCats);
-    // this.azureObject = this.listOfSubCats[0];
-    // this.iotObject = this.listOfSubCats[1];
-    // this.databaseObject = this.listOfSubCats[2];
-    // console.log(this.azureObject);
-    
+
     this.listOfSubCategory = this.subCategoryService.getSubCategory();
+
     this.subscription = this.activatedRoute.paramMap.subscribe(params => {
       this.sub = params.get("sub-category")
+
       this.sortedList = this.listOfSubCategory.filter(x => x.fk === this.sub);
       console.log(this.sortedList)
     });
 
   }
+
 
   ngOnDestroy() {
     this.subscription.unsubscribe();
@@ -65,7 +58,8 @@ export class SubCategoryComponent implements OnInit, OnDestroy {
 
   }
 
-  openDialog() {
+
+  openDialog(hdr: string, dscrp: string) {
     const dialogConfig = new MatDialogConfig();
 
     dialogConfig.disableClose = false;
@@ -74,8 +68,8 @@ export class SubCategoryComponent implements OnInit, OnDestroy {
     dialogConfig.width = '50%';
 
     dialogConfig.data = {
-      header: this.object2send2DialogBox.header,
-      description: this.object2send2DialogBox.description
+      header: hdr,
+      description: dscrp
     };
 
     const dialogRef = this.dialog.open(CategoryEditFormComponent, dialogConfig);
