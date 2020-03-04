@@ -1,10 +1,11 @@
-import { ReferenceComponent } from './../reference.component';
+
 import { ReferenceEditComponent } from './../reference-edit/reference-edit.component';
 import { Reference } from 'src/app/models/reference.model';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ReferenceService } from 'src/app/services/reference/reference.service';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ReferenceItemComponent } from '../reference-item/reference-item.component';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -14,11 +15,20 @@ import { ReferenceItemComponent } from '../reference-item/reference-item.compone
 })
 export class ReferenceListComponent implements OnInit {
   listOfRefs: Array<Reference> = [];
+  testListOfRefs: Reference[] = [];
+  sortedList: Reference[] = [];
+  sub: any;
   selectedReferenceInListComp: Reference = {header: '', description: ''};
 
-  constructor(private referenceService: ReferenceService, public dialog: MatDialog) { }
+  constructor(private referenceService: ReferenceService, public dialog: MatDialog, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
+    this.testListOfRefs = this.referenceService.getReference();
+    this.activatedRoute.paramMap.subscribe(params => {
+      this.sub = params.get('references');
+      this.sortedList = this.testListOfRefs.filter(x => x.fk === this.sub);
+      console.log(this.sortedList);
+    })
     this.listOfRefs = this.referenceService.listOfReferences();
     console.log(this.listOfRefs);
   }

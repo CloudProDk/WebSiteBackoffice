@@ -7,6 +7,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { SubCategory } from 'src/app/models/sub.category.model';
 import { SubCategoryService } from 'src/app/services/sub-category/sub-category.service';
+import { Subscription } from 'rxjs';
 
 
 @Component({
@@ -21,21 +22,42 @@ export class SubCategoryComponent implements OnInit, OnDestroy {
   sub: any;
   listOfSubCategory: SubCategory[] = [];
   sortedList: SubCategory[] = [];
+  subscription: Subscription;
 
   constructor(private activatedRoute: ActivatedRoute, private subCategoryService: SubCategoryService,  public dialog: MatDialog) { }
 
   ngOnInit() {
 
     this.listOfSubCategory = this.subCategoryService.getSubCategory();
-    this.activatedRoute.paramMap.subscribe(params => {
-      this.sub = params.get('sub-category');
-      this.sortedList = this.listOfSubCategory.filter(x => x.fk === this.sub);
 
+    this.subscription = this.activatedRoute.paramMap.subscribe(params => {
+      this.sub = params.get("sub-category")
+
+      this.sortedList = this.listOfSubCategory.filter(x => x.fk === this.sub);
+      console.log(this.sortedList)
     });
 
   }
 
-  ngOnDestroy() { }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+  }
+
+  clickedButton(name: string) {
+    console.log('clicked button name:' + name);
+    if (name === 'azure') {
+      this.object2send2DialogBox = this.azureObject;
+    } else if (name === 'iot') {
+      this.object2send2DialogBox = this.iotObject;
+    } else if (name === 'database' ) {
+      this.object2send2DialogBox = this.databaseObject;
+    }
+
+    console.log(this.object2send2DialogBox);
+
+  }
+
 
   openDialog(hdr: string, dscrp: string) {
     const dialogConfig = new MatDialogConfig();

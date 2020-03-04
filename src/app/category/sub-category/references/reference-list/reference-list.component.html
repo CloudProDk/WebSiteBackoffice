@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-xs-12">
-        <h3 class="">Sub Category Title</h3>
+        <h3 class="">sub header</h3>
         <p class="">Sub category description</p>
         <div style="text-align: center;">
             <mat-icon (click)="openAddDialog()">
@@ -20,7 +20,7 @@
         <li 
             href="#" 
             class="list-group-item clearfix"
-            *ngFor="let ref of listOfRefs"
+            *ngFor="let ref of sortedList"
             [ngClass]="ref === activeObject ? 'active' : 'none'"
             (click)="selectedItem(ref); openDialog()"
             >
