@@ -18,6 +18,7 @@ const routes: Routes = [
   { path: 'reference-list', component: ReferenceListComponent},
   { path: 'references', component: ReferenceComponent},
   { path: 'reference-item', component: ReferenceItemComponent},
+  { path: 'category', component: CategoryComponent},
 
   { path: ':sub-category', component: SubCategoryComponent},
     // children: [
