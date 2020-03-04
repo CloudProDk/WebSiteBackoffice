@@ -15,6 +15,10 @@ const routes: Routes = [
 
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: CategoryComponent},
+  { path: 'reference-list', component: ReferenceListComponent},
+  { path: 'references', component: ReferenceComponent},
+  { path: 'reference-item', component: ReferenceItemComponent},
+
   { path: ':sub-category', component: SubCategoryComponent},
     // children: [
     //   { path: 'cloud', component: SubCategoryComponent},
@@ -22,12 +26,6 @@ const routes: Routes = [
     //   { path: 'mobile', component: SubCategoryComponent},
     //   { path: 'support', component: SubCategoryComponent}
     // ]},
-  {path: 'reference-list', component: ReferenceListComponent},
-  {path: 'references', component: ReferenceComponent},
-  {path: 'reference-item', component: ReferenceItemComponent}
-
-
-
 ];
 
 @NgModule({
