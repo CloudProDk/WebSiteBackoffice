@@ -44,19 +44,7 @@ export class SubCategoryComponent implements OnInit, OnDestroy {
     this.subscription.unsubscribe();
   }
 
-  clickedButton(name: string) {
-    console.log('clicked button name:' + name);
-    if (name === 'azure') {
-      this.object2send2DialogBox = this.azureObject;
-    } else if (name === 'iot') {
-      this.object2send2DialogBox = this.iotObject;
-    } else if (name === 'database' ) {
-      this.object2send2DialogBox = this.databaseObject;
-    }
 
-    console.log(this.object2send2DialogBox);
-
-  }
 
 
   openDialog(hdr: string, dscrp: string) {
