@@ -38,15 +38,8 @@ export class SubCategoryService {
       description: 'support1 subcategory descriptio',
       fk: 'support'
     },
-
-
-   
   ]
   
-
-
-
-
     constructor() { }
   
     getSubCategory() {
