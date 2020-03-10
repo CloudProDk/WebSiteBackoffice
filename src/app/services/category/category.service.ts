@@ -55,7 +55,7 @@ cat4: Category = {imagePath: 'https://www.seekpng.com/png/detail/28-287453_outbo
 
   getAllCategories() {
     return this.http
-    .get<Category[]>('https://localhost:44370/api/category');
+    .get<Category[]>('http://cloudprobackofficeapi.azurewebsites.net/api/category');
   }
 
   // listOfCategory() {
