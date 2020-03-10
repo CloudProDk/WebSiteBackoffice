@@ -24,6 +24,7 @@ export class CategoryComponent implements OnInit {
 
     console.log('onInit category');
     this.fetchCategories();
+    console.log('after fetchCats');
     console.log(this.listOfCategories);
   }
 
@@ -45,6 +46,7 @@ export class CategoryComponent implements OnInit {
 
   fetchCategories() {
     this.categoryService.getAllCategories().subscribe(response => {
+      console.log(response);
       this.listOfCategories = response;
     });
   }
