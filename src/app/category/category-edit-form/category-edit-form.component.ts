@@ -10,7 +10,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class CategoryEditFormComponent implements OnInit {
   categoryCloudObject: Category = {imagePath: ' ', title: ' ', descriptions: ' '};
-  ewCategoryCloudObject: Category = {imagePath: ' ', title: ' ', descriptions: ' '};
+  newCategoryCloudObject: Category = {imagePath: ' ', title: ' ', descriptions: ' '};
 
   constructor(
     private categoryService: CategoryService,
@@ -27,7 +27,7 @@ export class CategoryEditFormComponent implements OnInit {
 
   gem() {
     console.log('jeg gemmer data nu.');
-    this.categoryService.updateData(this.categoryCloudObject);
+    this.categoryService.updateData(this.newCategoryCloudObject);
   }
 
 }

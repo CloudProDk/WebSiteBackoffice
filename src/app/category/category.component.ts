@@ -51,11 +51,11 @@ export class CategoryComponent implements OnInit {
 
   fetchCategories() {
     this.categoryService.getAllCategories().subscribe(response => {
-      console.log('my fetch response:')
+      console.log('my fetch response:');
       console.log(response);
-      console.log(response[0].id)
+      console.log(response[0].id);
       this.listOfCategories = response;
-      console.log(this.listOfCategories)
+      console.log(this.listOfCategories);
     });
   }
 }

@@ -66,9 +66,8 @@ cat4: Category = {imagePath: 'https://www.seekpng.com/png/detail/28-287453_outbo
   updateData(object: Category): void {
     this.http
      .put<number>(
-       'https://localhost:44370/api/category/' + object.id,
-       {title: object.title,
-        descriptions: object.descriptions
+       'http://cloudprobackofficeapi.azurewebsites.net/api/category/' + object.id,
+       {object
         }
       ).subscribe(response => {
         console.log(response);
