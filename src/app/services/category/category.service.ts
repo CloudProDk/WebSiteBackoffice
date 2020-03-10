@@ -63,11 +63,19 @@ cat4: Category = {imagePath: 'https://www.seekpng.com/png/detail/28-287453_outbo
   //  return this.list;
   // }
 
-  /* saveCloudData(text: string) {
-    this.cat1.description = text;
-    console.log('Inside CategoryService' + this.cat1.description);
-} */
-/* 
+  updateData(object: Category) {
+    this.http
+     .put<number>(
+       'https://localhost:44313/api/category/' + object.id,
+       {title: object.header,
+        descriptions: object.description
+        }
+      ).subscribe(response => {
+        console.log(response);
+      });
+}
+
+/*
 getCategory() {
   return this.listOfCategory;
 } */
