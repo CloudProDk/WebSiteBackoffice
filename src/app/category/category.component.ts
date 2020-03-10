@@ -26,6 +26,7 @@ export class CategoryComponent implements OnInit {
     this.fetchCategories();
     console.log('after fetchCats');
     console.log(this.listOfCategories);
+    console.log(this.listOfCategories[0].id);
   }
 
   openDialog(hdr: string, dscrp: string) {
