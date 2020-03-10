@@ -16,7 +16,7 @@ import { ActivatedRoute } from '@angular/router';
 export class CategoryComponent implements OnInit {
 
   routeName: any;
-  listOfCategories: Array<Category>;
+  listOfCategories: Category[];
 
   constructor(private categoryService: CategoryService, public dialog: MatDialog) { }
 
@@ -24,12 +24,14 @@ export class CategoryComponent implements OnInit {
 
     console.log('onInit category');
     this.fetchCategories();
-    console.log('after fetchCats');
+    /* console.log('after fetchCats');
     console.log(this.listOfCategories);
-    console.log(this.listOfCategories[0].id);
+    console.log('før xxxxxx'); */
+    /* console.log(this.listOfCategories[0].id); */
+    console.log('efter xxxxxx');
   }
 
-  openDialog(hdr: string, dscrp: string) {
+  openDialog(idd: number, imagePathh: string, ttl: string, dscrp: string) {
     const dialogConfig = new MatDialogConfig();
 
     dialogConfig.disableClose = false;
@@ -37,8 +39,10 @@ export class CategoryComponent implements OnInit {
     dialogConfig.height = '50%';
     dialogConfig.width = '50%';
     dialogConfig.data = {
-      header: hdr,
-      description: dscrp
+      id: idd,
+      imagePath: imagePathh,
+      title: ttl,
+      descriptions: dscrp
     };
 
 
@@ -47,8 +51,11 @@ export class CategoryComponent implements OnInit {
 
   fetchCategories() {
     this.categoryService.getAllCategories().subscribe(response => {
+      console.log('my fetch response:')
       console.log(response);
+      console.log(response[0].id)
       this.listOfCategories = response;
+      console.log(this.listOfCategories)
     });
   }
 }

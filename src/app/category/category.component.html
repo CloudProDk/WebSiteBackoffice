@@ -8,13 +8,13 @@
               alt="Generic placeholder image" 
               width="140" 
               height="140"> 
-          <h2>{{category.header}}</h2>          
-          <p>{{category.description}}</p>    
+          <h2>{{category.title}}</h2>          
+          <p>{{category.descriptions}}</p>    
 
             <button 
               type="button" 
               class="btn btn-info"
-              (click) = "openDialog(category.header, category.description)" >
+              (click) = "openDialog(category.id, category.imagePath, category.title, category.descriptions)" >
               Ændre på Cloud teksten
             </button>
         </div>       

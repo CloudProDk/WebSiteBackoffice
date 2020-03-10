@@ -9,16 +9,17 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
   styleUrls: ['./category-edit-form.component.scss']
 })
 export class CategoryEditFormComponent implements OnInit {
-  categoryCloudObject: Category = {imagePath: ' ', header: ' ', description: ' '};
-  /* newCategoryCloudObject: Category = {imagePath: ' ', header: ' ', description: ' '}; */
+  categoryCloudObject: Category = {imagePath: ' ', title: ' ', descriptions: ' '};
+  ewCategoryCloudObject: Category = {imagePath: ' ', title: ' ', descriptions: ' '};
 
   constructor(
     private categoryService: CategoryService,
     private dialogRef: MatDialogRef<CategoryEditFormComponent>,
     @Inject(MAT_DIALOG_DATA) data) {
-
-      this.categoryCloudObject.header = data.header;
-      this.categoryCloudObject.description = data.description;
+      this.categoryCloudObject.id = data.id,
+      this.categoryCloudObject.imagePath = data.imagePath;
+      this.categoryCloudObject.title = data.title;
+      this.categoryCloudObject.descriptions = data.descriptions;
      }
 
   ngOnInit() {

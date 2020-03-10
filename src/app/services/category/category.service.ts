@@ -63,12 +63,12 @@ cat4: Category = {imagePath: 'https://www.seekpng.com/png/detail/28-287453_outbo
   //  return this.list;
   // }
 
-  updateData(object: Category) {
+  updateData(object: Category): void {
     this.http
      .put<number>(
-       'https://localhost:44313/api/category/' + object.id,
-       {title: object.header,
-        descriptions: object.description
+       'https://localhost:44370/api/category/' + object.id,
+       {title: object.title,
+        descriptions: object.descriptions
         }
       ).subscribe(response => {
         console.log(response);
