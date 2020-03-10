@@ -10,7 +10,7 @@ export class CategoryService {
 list: Array<Category> = [];
 listLength: number;
 
-private listOfCategory: Category[] = [
+/* private listOfCategory: Category[] = [
   {
     header: 'Cloud',
     description: 'Vi kan hjælpe dig uanset om det er migrering af eksisterende infrastruktur, design af en ny infrastruktur i skyen, sikkerhedshåndtering af forskellige løsninger eller rådgivning omkring Microsoft Cloud.',
@@ -50,7 +50,7 @@ cat3: Category = {imagePath: 'https://cdn0.iconfinder.com/data/icons/mobile-devi
 cat4: Category = {imagePath: 'https://www.seekpng.com/png/detail/28-287453_outbound-call-support-tech-support-icon-blue.png',
                   header: 'Support',
                   description: 'Lad os håndtere din IT for dig Vi leverer abonnements baserede IT løsninger til mindre virksomheder som ikke kan eller vil selv. Det kalder vi IT-as-a-Service.'
-                  };
+                  }; */
   constructor(private http: HttpClient) { }
 
   getAllCategories() {
@@ -63,13 +63,13 @@ cat4: Category = {imagePath: 'https://www.seekpng.com/png/detail/28-287453_outbo
   //  return this.list;
   // }
 
-  saveCloudData(text: string) {
+  /* saveCloudData(text: string) {
     this.cat1.description = text;
     console.log('Inside CategoryService' + this.cat1.description);
-}
-
+} */
+/* 
 getCategory() {
   return this.listOfCategory;
-}
+} */
 
 }

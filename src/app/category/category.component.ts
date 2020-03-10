@@ -23,7 +23,7 @@ export class CategoryComponent implements OnInit {
   ngOnInit() {
 
     console.log('onInit category');
-    this.listOfCategories = this.categoryService.getCategory();
+    this.fetchCategories();
     console.log(this.listOfCategories);
   }
 
@@ -41,5 +41,11 @@ export class CategoryComponent implements OnInit {
 
 
     const dialogRef = this.dialog.open(CategoryEditFormComponent, dialogConfig);
+  }
+
+  fetchCategories() {
+    this.categoryService.getAllCategories().subscribe(response => {
+      this.listOfCategories = response;
+    });
   }
 }
