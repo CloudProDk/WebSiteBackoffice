@@ -63,7 +63,7 @@ cat4: Category = {imagePath: 'https://www.seekpng.com/png/detail/28-287453_outbo
   //  return this.list;
   // }
 
-  updateData(object: Category): void {
+  updateData(object: Category) {
     this.http
      .put<number>(
        'http://cloudprobackofficeapi.azurewebsites.net/api/category/' + object.id,

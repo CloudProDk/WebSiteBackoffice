@@ -9,8 +9,8 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
   styleUrls: ['./category-edit-form.component.scss']
 })
 export class CategoryEditFormComponent implements OnInit {
-  categoryCloudObject: Category = {imagePath: ' ', title: ' ', descriptions: ' '};
-  newCategoryCloudObject: Category = {imagePath: ' ', title: ' ', descriptions: ' '};
+  categoryCloudObject: Category = {id: null , imagePath: ' ', title: ' ', descriptions: ' '};
+  newCategoryCloudObject: Category = {id: null , imagePath: ' ', title: ' ', descriptions: ' '};
 
   constructor(
     private categoryService: CategoryService,
@@ -20,12 +20,20 @@ export class CategoryEditFormComponent implements OnInit {
       this.categoryCloudObject.imagePath = data.imagePath;
       this.categoryCloudObject.title = data.title;
       this.categoryCloudObject.descriptions = data.descriptions;
+      this.newCategoryCloudObject.id = data.id,
+      this.newCategoryCloudObject.imagePath = data.imagePath;
+      this.newCategoryCloudObject.title = data.title;
+      this.newCategoryCloudObject.descriptions = data.descriptions;
      }
 
   ngOnInit() {
+    // this.newCategoryCloudObject = this.categoryCloudObject;
+    console.log('onInit');
+    console.log(this.newCategoryCloudObject);
   }
 
   gem() {
+    console.log(this.newCategoryCloudObject);
     console.log('jeg gemmer data nu.');
     this.categoryService.updateData(this.newCategoryCloudObject);
   }
