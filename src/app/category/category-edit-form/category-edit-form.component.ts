@@ -28,14 +28,21 @@ export class CategoryEditFormComponent implements OnInit {
 
   ngOnInit() {
     // this.newCategoryCloudObject = this.categoryCloudObject;
-    console.log('onInit');
+    console.log('onInit before');
     console.log(this.newCategoryCloudObject);
+    console.log('onInit after');
   }
 
   gem() {
+    console.log('the object to save:');
     console.log(this.newCategoryCloudObject);
     console.log('jeg gemmer data nu.');
     this.categoryService.updateData(this.newCategoryCloudObject);
+    this.dialogRef.close();
+  }
+
+  fortryd() {
+    this.dialogRef.close();
   }
 
 }

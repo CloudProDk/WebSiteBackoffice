@@ -5,7 +5,7 @@
           <input 
             matInput
             value="{{categoryCloudObject.title}}"
-            (input)="newCategoryCloudObject.title = $event.terget.value">            
+            (input)="newCategoryCloudObject.title = $event.target.value">            
         </mat-form-field>
         <br>
         <mat-form-field appearance="fill" floatLabel="always">
@@ -16,6 +16,7 @@
                 {{categoryCloudObject.descriptions}}
             </textarea>
           </mat-form-field> <br>
-          <button mat-raised-button color="primary" (click)= "gem()" >Gem</button>
+          <button mat-raised-button color="primary" (click)= "gem()" >Gem</button> &nbsp;
+          <button mat-raised-button color="warn" (click)= "fortryd()" >Fortryd</button>
     </div> 
 </div>
