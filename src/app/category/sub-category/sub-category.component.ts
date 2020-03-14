@@ -8,6 +8,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import { SubCategory } from 'src/app/models/sub.category.model';
 import { SubCategoryService } from 'src/app/services/sub-category/sub-category.service';
 import { Subscription } from 'rxjs';
+import { SubCategoryEditFormComponent } from './sub-category-edit-form/sub-category-edit-form.component';
 
 
 @Component({
@@ -34,7 +35,7 @@ export class SubCategoryComponent implements OnInit, OnDestroy {
       this.sub = params.get("sub-category")
 
       this.sortedList = this.listOfSubCategory.filter(x => x.fk === this.sub);
-      console.log(this.sortedList)
+      console.log(this.sortedList);
     });
 
   }
@@ -47,7 +48,7 @@ export class SubCategoryComponent implements OnInit, OnDestroy {
 
 
 
-  openDialog(hdr: string, dscrp: string) {
+  openDialog(subCat: SubCategory) {
     const dialogConfig = new MatDialogConfig();
 
     dialogConfig.disableClose = false;
@@ -56,10 +57,12 @@ export class SubCategoryComponent implements OnInit, OnDestroy {
     dialogConfig.width = '50%';
 
     dialogConfig.data = {
-      header: hdr,
-      description: dscrp
+      id: subCat.id,
+      header: subCat.header,
+      description: subCat.description,
+      fk: subCat.fk
     };
 
-    const dialogRef = this.dialog.open(CategoryEditFormComponent, dialogConfig);
+    const dialogRef = this.dialog.open(SubCategoryEditFormComponent, dialogConfig);
   }
 }

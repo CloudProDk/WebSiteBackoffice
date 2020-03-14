@@ -1,4 +1,5 @@
 export class SubCategory {
+    public id?: number;
     public header: string;
     public description: string;
     public fk?: string;

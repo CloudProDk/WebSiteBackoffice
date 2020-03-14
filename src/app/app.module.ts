@@ -55,7 +55,8 @@ import { SubCategoryEditFormComponent } from './category/sub-category/sub-catego
     ReferenceEditComponent,
     MainNavComponent,
     ReferenceItemComponent,
-    CategoryEditFormComponent
+    CategoryEditFormComponent,
+    SubCategoryEditFormComponent
   ],
   imports: [
     BrowserModule,
