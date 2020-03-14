@@ -2,8 +2,8 @@
     <div class="row">
       <div *ngFor="let subCategory of sortedList">
         <div class="col-xs-4">
-          <h2>{{subCategory.header}}</h2>
-          <p>{{subCategory.description}}</p>
+          <h2>{{subCategory.title}}</h2>
+          <p>{{subCategory.descriptions}}</p>
             <button type="button" 
                     class="btn btn-info"
                     (click)="openDialog(subCategory.header, subCategory.description)">

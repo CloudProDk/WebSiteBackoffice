@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { SubCategory } from 'src/app/models/sub.category.model';
 
@@ -5,7 +6,8 @@ import { SubCategory } from 'src/app/models/sub.category.model';
   providedIn: 'root'
 })
 export class SubCategoryService {
-  list: Array<SubCategory> = [];
+ 
+  /*  list: Array<SubCategory> = [];
   
   private testSubCategory: SubCategory[] = [
     {
@@ -38,13 +40,14 @@ export class SubCategoryService {
       description: 'support1 subcategory descriptio',
       fk: 'support'
     },
-  ]
+  ] */
   
-    constructor() { }
+    constructor(private http: HttpClient) { }
   
-    getSubCategory() {
-      return this.testSubCategory;
-    }
+      getAllSubCategories() {
+        return this.http
+        .get<SubCategory[]>('http://cloudprobackofficeapi.azurewebsites.net/api/subcategory');
+      }
 
     testCategory(test: string) {
       return this.testCategory[test];

@@ -44,5 +44,4 @@ export class CategoryEditFormComponent implements OnInit {
   fortryd() {
     this.dialogRef.close();
   }
-
 }

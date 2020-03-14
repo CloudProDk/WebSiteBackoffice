@@ -1,3 +1,4 @@
+import { SubCategoryEditFormComponent } from './sub-category-edit-form/sub-category-edit-form.component';
 
 
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
@@ -27,14 +28,13 @@ export class SubCategoryComponent implements OnInit, OnDestroy {
   constructor(private activatedRoute: ActivatedRoute, private subCategoryService: SubCategoryService,  public dialog: MatDialog) { }
 
   ngOnInit() {
-
-    this.listOfSubCategory = this.subCategoryService.getSubCategory();
-
+    this.getAllSubCats();
+    console.log(this.listOfSubCategory);
     this.subscription = this.activatedRoute.paramMap.subscribe(params => {
-      this.sub = params.get("sub-category")
+      this.sub = params.get('sub-category');
 
-      this.sortedList = this.listOfSubCategory.filter(x => x.fk === this.sub);
-      console.log(this.sortedList)
+      this.sortedList = this.listOfSubCategory.filter(x => x.fkCategoryId === this.sub);
+      console.log(this.sortedList);
     });
 
   }
@@ -60,6 +60,13 @@ export class SubCategoryComponent implements OnInit, OnDestroy {
       description: dscrp
     };
 
-    const dialogRef = this.dialog.open(CategoryEditFormComponent, dialogConfig);
+    const dialogRef = this.dialog.open(SubCategoryEditFormComponent, dialogConfig);
+  }
+
+  getAllSubCats() {
+    this.subCategoryService.getAllSubCategories().subscribe(response => {
+      this.listOfSubCategory = response;
+      console.log(response);
+    });
   }
 }

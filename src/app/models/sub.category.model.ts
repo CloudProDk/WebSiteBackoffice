@@ -1,11 +1,12 @@
 export class SubCategory {
-    public header: string;
-    public description: string;
-    public fk?: string;
+    public id?: number;
+    public title: string;
+    public descriptions: string;
+    public fkCategoryId?: string;
 
-    constructor(hdr: string, dsc: string, fKey: string) {
-        this.header = hdr;
-        this.description = dsc;
-        this.fk = fKey;
+    constructor(ttl: string, dsc: string, fKey: string) {
+        this.title = ttl;
+        this.descriptions = dsc;
+        this.fkCategoryId = fKey;
     }
 }
