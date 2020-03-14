@@ -30,6 +30,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { ReferenceItemComponent } from './category/sub-category/references/reference-item/reference-item.component';
 import { CategoryEditFormComponent } from './category/category-edit-form/category-edit-form.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SubCategoryEditFormComponent } from './category/sub-category/sub-category-edit-form/sub-category-edit-form.component';
 
 
 
@@ -47,7 +48,8 @@ import { HttpClientModule } from '@angular/common/http';
     HeaderComponent,
     MainNavComponent,
     ReferenceItemComponent,
-    CategoryEditFormComponent
+    CategoryEditFormComponent,
+    SubCategoryEditFormComponent
   ],
   entryComponents: [
     ReferenceEditComponent,
