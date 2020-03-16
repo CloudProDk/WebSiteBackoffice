@@ -29,12 +29,13 @@ export class SubCategoryComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
 
-    this.listOfSubCategory = this.subCategoryService.getSubCategory();
+   /*  this.listOfSubCategory = this.subCategoryService.getSubCategory(); */
+   this.subCategoryService.getAllSubCategory().subscribe(response => { this.listOfSubCategory = response; });
 
-    this.subscription = this.activatedRoute.paramMap.subscribe(params => {
-      this.sub = params.get("sub-category")
+   this.subscription = this.activatedRoute.paramMap.subscribe(params => {
+      this.sub = params.get('sub-category');
 
-      this.sortedList = this.listOfSubCategory.filter(x => x.fk === this.sub);
+      this.sortedList = this.listOfSubCategory.filter(x => x.fkCategoryId === this.sub);
       console.log(this.sortedList);
     });
 
@@ -58,9 +59,9 @@ export class SubCategoryComponent implements OnInit, OnDestroy {
 
     dialogConfig.data = {
       id: subCat.id,
-      header: subCat.header,
-      description: subCat.description,
-      fk: subCat.fk
+      title: subCat.title,
+      descriptions: subCat.descriptions,
+      fkCategoryId: subCat.fkCategoryId
     };
 
     const dialogRef = this.dialog.open(SubCategoryEditFormComponent, dialogConfig);
