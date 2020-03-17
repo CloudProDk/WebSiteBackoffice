@@ -45,4 +45,5 @@ export class SubCategoryEditFormComponent implements OnInit {
   fortryd() {
     this.dialogRef.close();
   }
+
 }
