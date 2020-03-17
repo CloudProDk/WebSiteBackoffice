@@ -37,9 +37,12 @@ export class SubCategoryComponent implements OnInit, OnDestroy {
               console.log(response);
               this.listOfSubCategory = response;
             });
+    //her tager man parametren fra url cloud, web etc.
    this.subscription = this.activatedRoute.paramMap.subscribe(params => {
       this.sub = params.get('sub-category');
 
+    //her bliver parametren sat til at skulle være det samme som vore fkcategoryid
+    //men vores fk er et tal og vores parametre er en string
       this.sortedList = this.listOfSubCategory.filter(x => x.fkCategoryId === this.sub);
       console.log(this.sortedList);
     });
