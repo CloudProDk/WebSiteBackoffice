@@ -25,13 +25,18 @@ export class SubCategoryComponent implements OnInit, OnDestroy {
   sortedList: SubCategory[] = [];
   subscription: Subscription;
 
-  constructor(private activatedRoute: ActivatedRoute, private subCategoryService: SubCategoryService,  public dialog: MatDialog) { }
+  constructor(private activatedRoute: ActivatedRoute,
+              private subCategoryService: SubCategoryService,
+              public dialog: MatDialog) { }
 
   ngOnInit() {
 
    /*  this.listOfSubCategory = this.subCategoryService.getSubCategory(); */
-   this.subCategoryService.getAllSubCategory().subscribe(response => { this.listOfSubCategory = response; });
-
+   this.subCategoryService.getAllSubCategory().subscribe(response => {
+              console.log('our responce:');
+              console.log(response);
+              this.listOfSubCategory = response;
+            });
    this.subscription = this.activatedRoute.paramMap.subscribe(params => {
       this.sub = params.get('sub-category');
 
