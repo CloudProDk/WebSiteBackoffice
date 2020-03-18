@@ -43,7 +43,18 @@ export class SubCategoryComponent implements OnInit, OnDestroy {
 
     //her bliver parametren sat til at skulle være det samme som vore fkcategoryid
     //men vores fk er et tal og vores parametre er en string
-      this.sortedList = this.listOfSubCategory.filter(x => x.fkCategoryId === this.sub);
+      this.sortedList = this.listOfSubCategory.filter(x => { switch (x.fkCategoryId) {
+                          case 1: 'cloud' === this.sub;
+                                  break;
+                          case 2: 'web' === this.sub;
+                                  break;
+                          case 3: 'mobile' === this.sub;
+                                  break;
+                          case 4: 'support' === this.sub;
+                                  break;
+                          }
+                        }
+                        );
       console.log(this.sortedList);
     });
 
