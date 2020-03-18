@@ -7,7 +7,7 @@ import { Reference } from 'src/app/models/reference.model';
 })
 export class ReferenceService {
   list: Array<Reference> = [];
-  private testReference: Reference[] = [
+  /* private testReference: Reference[] = [
     {
       header: 'reference microsoft',
       description: 'reference description',
@@ -23,7 +23,7 @@ export class ReferenceService {
       description: 'reference description',
       fk: 'iot'
     },
-  ];
+  ]; */
 
   ref1: Reference = {header: 'dsb', description: 'Api til DSB mobil app '};
   ref2: Reference = {header: 'Movia', description: 'Database til Movias online platform '};
