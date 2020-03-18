@@ -44,7 +44,7 @@ export class SubCategoryService {
 
     getAllSubCategory() {
       return this.http
-     .get<SubCategory[]>('http://cloudprobackofficeapi.azurewebsites.net/api/subcategory');
+     .get<any[]>('http://cloudprobackofficeapi.azurewebsites.net/api/subcategory').toPromise();
     }
 
     getTestList() {
