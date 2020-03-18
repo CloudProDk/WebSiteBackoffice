@@ -22,15 +22,38 @@ export class ReferenceListComponent implements OnInit {
 
   constructor(private referenceService: ReferenceService, public dialog: MatDialog, private activatedRoute: ActivatedRoute) { }
 
-  ngOnInit() {
-    this.testListOfRefs = this.referenceService.getReference();
+  async ngOnInit() {
+    /* this.testListOfRefs = this.referenceService.getReference(); */
+    const data = await this.referenceService.getAllReferencesFromApi();
+    console.log('list of all refs from API:');
+    console.log(data);
+    data.forEach(x => {
+      const helperObject: Reference = {id: null, imagePath: '', header: '', description: '', fk: ''};
+      helperObject.id = x.id;
+      helperObject.header = x.title;
+      helperObject.description = x.descriptions;
+      helperObject.imagePath = x.imagePath;
+      if (x.fkSubCategoryId === 2) {
+          helperObject.fk = 'microsoft-azure';
+        } else if (x.fkSubCategoryId === 3) {
+          helperObject.fk = 'iot';
+        } else if (x.fkSubCategoryId === 4) {
+          helperObject.fk = 'database';
+        }
+      console.log(helperObject);
+      this.testListOfRefs.push(helperObject);
+    });
+    
+    
     this.activatedRoute.paramMap.subscribe(params => {
       this.sub = params.get('references');
       this.sortedList = this.testListOfRefs.filter(x => x.fk === this.sub);
+      console.log('this is the sorted list:');
       console.log(this.sortedList);
     });
-    this.listOfRefs = this.referenceService.listOfReferences();
-    console.log(this.listOfRefs);
+    /* this.listOfRefs = this.referenceService.listOfReferences();
+    console.log('this is the list of reference');
+    console.log(this.listOfRefs); */
   }
 
   selectedItem( ref: Reference) {

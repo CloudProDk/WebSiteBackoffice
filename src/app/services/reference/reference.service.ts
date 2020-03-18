@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable, ɵAPP_ID_RANDOM_PROVIDER } from '@angular/core';
 import { Reference } from 'src/app/models/reference.model';
 
@@ -30,7 +31,7 @@ export class ReferenceService {
   listLength: number;
   selectedReference: Reference = {header: ' qqqq', description: ' qqqqq'};
 
-  constructor() {  }
+  constructor(private http: HttpClient) {  }
 
   getReference() {
     return this.testReference;
@@ -49,8 +50,13 @@ export class ReferenceService {
     return this.selectedReference;
   }
 
-  TilfojReference(Ref: Reference){
+  TilfojReference(Ref: Reference) {
     this.listLength = this.list.push(Ref);
+  }
+
+  getAllReferencesFromApi() {
+    return this.http
+   .get<any[]>('http://cloudprobackofficeapi.azurewebsites.net/api/reference').toPromise();
   }
 
 }
