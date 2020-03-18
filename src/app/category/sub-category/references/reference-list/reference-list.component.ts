@@ -28,7 +28,7 @@ export class ReferenceListComponent implements OnInit {
       this.sub = params.get('references');
       this.sortedList = this.testListOfRefs.filter(x => x.fk === this.sub);
       console.log(this.sortedList);
-    })
+    });
     this.listOfRefs = this.referenceService.listOfReferences();
     console.log(this.listOfRefs);
   }
