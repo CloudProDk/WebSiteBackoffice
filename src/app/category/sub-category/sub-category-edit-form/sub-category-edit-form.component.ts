@@ -9,22 +9,22 @@ import { SubCategoryService } from 'src/app/services/sub-category/sub-category.s
   styleUrls: ['./sub-category-edit-form.component.scss']
 })
 export class SubCategoryEditFormComponent implements OnInit {
-  subCategoryCloudObject: SubCategory = {id: null , title: ' ', descriptions: ' ', fkCategoryId: null};
-  newSubCategoryCloudObject: SubCategory = {id: null , title: ' ', descriptions: ' ', fkCategoryId: null};
+  subCategoryCloudObject: SubCategory = {id: null , header: ' ', description: ' ', fk: null};
+  newSubCategoryCloudObject: SubCategory = {id: null , header: ' ', description: ' ', fk: null};
 
   constructor(
     private subCategoryService: SubCategoryService,
     private dialogRef: MatDialogRef<SubCategoryEditFormComponent>,
     @Inject(MAT_DIALOG_DATA) data) {
       this.subCategoryCloudObject.id = data.id;
-      this.subCategoryCloudObject.title = data.title;
-      this.subCategoryCloudObject.descriptions = data.descriptions;
-      this.subCategoryCloudObject.fkCategoryId = data.fkCategoryId;
+      this.subCategoryCloudObject.header = data.title;
+      this.subCategoryCloudObject.description = data.descriptions;
+      this.subCategoryCloudObject.fk = data.fkCategoryId;
 
       this.newSubCategoryCloudObject.id = data.id;
-      this.newSubCategoryCloudObject.title = data.title;
-      this.newSubCategoryCloudObject.descriptions = data.descriptions;
-      this.newSubCategoryCloudObject.fkCategoryId = data.fkCategoryId;
+      this.newSubCategoryCloudObject.header = data.title;
+      this.newSubCategoryCloudObject.description = data.descriptions;
+      this.newSubCategoryCloudObject.fk = data.fkCategoryId;
      }
 
   ngOnInit() {

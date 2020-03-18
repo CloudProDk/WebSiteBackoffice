@@ -31,20 +31,20 @@ export class SubCategoryComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
 
-   /*  this.listOfSubCategory = this.subCategoryService.getSubCategory(); */
-   this.subCategoryService.getAllSubCategory().subscribe(response => {
+    this.listOfSubCategory = this.subCategoryService.getTestList();
+  /*  this.subCategoryService.getAllSubCategory().subscribe(response => {
               console.log('our responce:');
               console.log(response);
               this.listOfSubCategory = response;
-            });
+            }); */
     //her tager man parametren fra url cloud, web etc.
    this.subscription = this.activatedRoute.paramMap.subscribe(params => {
       this.sub = params.get('sub-category');
 
     //her bliver parametren sat til at skulle være det samme som vore fkcategoryid
     //men vores fk er et tal og vores parametre er en string
-      /* this.sortedList = this.listOfSubCategory.filter(x => x ); */
-      this.listOfSubCategory.forEach(x => {
+      this.sortedList = this.listOfSubCategory.filter(x => x.fk === this.sub );
+/*       this.listOfSubCategory.forEach(x => {
         if (x.fkCategoryId === 1 && 'cloud' === this.sub) {
           this.sortedList.push(x);
         } else if (x.fkCategoryId === 2 && 'web' === this.sub) {
@@ -53,24 +53,22 @@ export class SubCategoryComponent implements OnInit, OnDestroy {
           this.sortedList.push(x);
         } else if (x.fkCategoryId === 4 && 'support' === this.sub) {
           this.sortedList.push(x);
-        }
-
-
-      });
-      console.log(this.sortedList);
+        } */
+     
+   console.log(this.sortedList);
     });
 
   }
 
 
-  ngOnDestroy() {
+ngOnDestroy() {
     this.subscription.unsubscribe();
   }
 
 
 
 
-  openDialog(subCat: SubCategory) {
+openDialog(subCat: SubCategory) {
     const dialogConfig = new MatDialogConfig();
 
     dialogConfig.disableClose = false;
@@ -80,9 +78,9 @@ export class SubCategoryComponent implements OnInit, OnDestroy {
 
     dialogConfig.data = {
       id: subCat.id,
-      title: subCat.title,
-      descriptions: subCat.descriptions,
-      fkCategoryId: subCat.fkCategoryId
+      title: subCat.header,
+      descriptions: subCat.description,
+      fkCategoryId: subCat.fk
     };
 
     const dialogRef = this.dialog.open(SubCategoryEditFormComponent, dialogConfig);

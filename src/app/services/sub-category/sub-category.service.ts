@@ -7,7 +7,7 @@ import { SubCategory } from 'src/app/models/sub.category.model';
 })
 export class SubCategoryService {
 
-/*   private testSubCategory: SubCategory[] = [
+  private testSubCategory: SubCategory[] = [
     {
       header: 'Microsoft Azure',
       description: 'cloud1 subcategory descriptio',
@@ -38,12 +38,16 @@ export class SubCategoryService {
       description: 'support1 subcategory descriptio',
       fk: 'support'
     },
-  ]
-   */
+  ];
+
     constructor(private http: HttpClient) { }
 
     getAllSubCategory() {
       return this.http
      .get<SubCategory[]>('http://cloudprobackofficeapi.azurewebsites.net/api/subcategory');
+    }
+
+    getTestList() {
+      return this.testSubCategory;
     }
 }
