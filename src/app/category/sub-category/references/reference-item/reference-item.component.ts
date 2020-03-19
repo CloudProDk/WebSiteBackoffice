@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ReferenceService } from 'src/app/services/reference/reference.service';
 import { Reference } from 'src/app/models/reference.model';
+import { MatDialogRef } from '@angular/material/dialog';
 
 
 @Component({
@@ -9,22 +10,24 @@ import { Reference } from 'src/app/models/reference.model';
   styleUrls: ['./reference-item.component.scss']
 })
 export class ReferenceItemComponent implements OnInit {
-headerInput: string;
-descriptionInput: string;
-refhelpObject: Reference = {header: '', description: '' };
 
-  constructor(private referenceService: ReferenceService ) { }
+
+refhelpObject: Reference = {id: null, header: '', description: '', imagePath: '', fk: '' };
+
+  constructor(private referenceService: ReferenceService,
+              private dialogRef: MatDialogRef<ReferenceItemComponent> ) {
+
+              }
 
   ngOnInit() {
   }
 
- TilfojReference(headerInput, descriptionInput) {
-   this.refhelpObject.header = headerInput;
-   this.refhelpObject.description = descriptionInput;
-   this.referenceService.TilfojReference(this.refhelpObject);
-   console.log("test");
+ TilfojReference() {
+   this.referenceService.postReference(this.refhelpObject);
+   console.log('posted ref object:' + this.refhelpObject);
  }
-
-
+ fortryd() {
+  this.dialogRef.close();
+ }
 
 }

@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable, ɵAPP_ID_RANDOM_PROVIDER } from '@angular/core';
 import { Reference } from 'src/app/models/reference.model';
 
@@ -5,7 +6,9 @@ import { Reference } from 'src/app/models/reference.model';
   providedIn: 'root'
 })
 export class ReferenceService {
+
   list: Array<Reference> = [];
+  
   private testReference: Reference[] = [
     {
       header: 'reference microsoft',
@@ -30,7 +33,7 @@ export class ReferenceService {
   listLength: number;
   selectedReference: Reference = {header: ' qqqq', description: ' qqqqq'};
 
-  constructor() {  }
+  constructor(private http: HttpClient) {  }
 
   getReference() {
     return this.testReference;
@@ -49,8 +52,67 @@ export class ReferenceService {
     return this.selectedReference;
   }
 
-  TilfojReference(Ref: Reference){
-    this.listLength = this.list.push(Ref);
+  postReference(ref: Reference) {
+    let fk2number: number;
+    switch (ref.fk) {
+        case 'microsoft-azure': fk2number = 2;
+                                break;
+        case 'iot': fk2number = 3;
+                    break;
+        case 'database': fk2number = 4;
+                         break;
+        default:
+          break;
+      }
+    this.http.post<number>(
+      'http://cloudprobackofficeapi.azurewebsites.net/api/reference',
+       {title: ref.header,
+        descriptions: ref.description,
+        imagePath: ref.imagePath,
+        fkSubCategoryId: fk2number
+      }).subscribe(data => {
+         console.log('http post respons:' + data);
+       });
   }
 
+  updateReference(ref: Reference) {
+    let fk2number: number;
+    switch (ref.fk) {
+        case 'microsoft-azure': fk2number = 2;
+                                break;
+        case 'iot': fk2number = 3;
+                    break;
+        case 'database': fk2number = 4;
+                         break;
+        default:
+          break;
+      }
+    console.log('print fk2Number:' + fk2number);
+    this.http
+       .put<number>(
+         'http://cloudprobackofficeapi.azurewebsites.net/api/reference/' + ref.id,
+         {  title: ref.header,
+            descriptions: ref.description,
+            imagePath: ref.imagePath,
+            fkSubCategoryId: fk2number
+          }
+        ).subscribe(response => {
+          console.log('updateReference http response:');
+          console.log(response);
+        });
+
+  }
+
+  deleteReference(id: number) {
+    this.http
+     .delete<number>('http://cloudprobackofficeapi.azurewebsites.net/api/reference/' + id)
+     .subscribe(data => {
+       console.log('delete http response:' + data);
+     });
+  }
+
+  getAllReferencesFromApi() {
+    return this.http
+   .get<any[]>('http://cloudprobackofficeapi.azurewebsites.net/api/reference').toPromise();
+  }
 }

@@ -7,7 +7,7 @@ import { SubCategory } from 'src/app/models/sub.category.model';
 })
 export class SubCategoryService {
 
-  private testSubCategory: SubCategory[] = [
+  /* private testSubCategory: SubCategory[] = [
     {
       header: 'Microsoft Azure',
       description: 'cloud1 subcategory descriptio',
@@ -39,7 +39,7 @@ export class SubCategoryService {
       fk: 'support'
     },
   ];
-
+ */
     constructor(private http: HttpClient) { }
 
     getAllSubCategory() {
@@ -47,7 +47,35 @@ export class SubCategoryService {
      .get<any[]>('http://cloudprobackofficeapi.azurewebsites.net/api/subcategory').toPromise();
     }
 
-    getTestList() {
+    updateData(object: SubCategory) {
+      let fk2number: number;
+      switch (object.fk) {
+        case 'cloud': fk2number = 1;
+                      break;
+        case 'web': fk2number = 2;
+                    break;
+        case 'mobile': fk2number = 3;
+                       break;
+        case 'support': fk2number = 4;
+                        break;
+        default:
+          break;
+      }
+
+      this.http
+       .put<number>(
+         'http://cloudprobackofficeapi.azurewebsites.net/api/subcategory/' + object.id,
+         {  title: object.header,
+            descriptions: object.description,
+            fkCategoryId: fk2number
+          }
+        ).subscribe(response => {
+          console.log('udateData http response:');
+          console.log(response);
+        });
+      }
+
+   /*  getTestList() {
       return this.testSubCategory;
-    }
+    } */
 }

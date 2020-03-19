@@ -1,5 +1,5 @@
 <div>
-    <mat-icon>
+    <mat-icon (click) = "updateRef()">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" 
             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
             stroke-linejoin="round" class="feather feather-save">
@@ -11,7 +11,7 @@
         </svg>
     </mat-icon>
       &nbsp;
-    <mat-icon (click)="clickTest()">
+    <mat-icon (click)="deleteRef()">
         <svg xmlns="http://www.w3.org/2000/svg" onclick="" width="24" height="24" 
             viewBox="0 0 24 24" fill="none" stroke="currentColor" 
             stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
@@ -26,12 +26,18 @@
     <form class="example-form" >
         <mat-form-field class="example-full-width" floatLabel='always'>
           <mat-label></mat-label>
-          <input matInput placeholder="" value="{{selectedReference.header}}">
+          <input matInput 
+                placeholder="" 
+                value="{{selectedReference.header}}"
+                (input)="selectedReference.header = $event.target.value">
         </mat-form-field> <br>
       
         <mat-form-field class="example-full-width" floatLabel='always'>
           <mat-label></mat-label>
-          <textarea matInput placeholder="">{{selectedReference.description}}</textarea>
+          <textarea matInput 
+                    placeholder="">{{selectedReference.description}}
+                    (input)="selectedReference.description = $event.target.value"
+          </textarea>
         </mat-form-field>
       </form>
 </div>
