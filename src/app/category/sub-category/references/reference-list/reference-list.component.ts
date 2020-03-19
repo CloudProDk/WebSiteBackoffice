@@ -62,14 +62,17 @@ export class ReferenceListComponent implements OnInit {
     console.log('set selected reference in ref service');
   }
 
-  openDialog(): void {
+  openDialog(ref: Reference): void {
     const dialogConfig = new MatDialogConfig();
 
     dialogConfig.disableClose = false;
     dialogConfig.autoFocus = true;
     dialogConfig.data = {
-      header: this.selectedReferenceInListComp.header,
-      description: this.selectedReferenceInListComp.description
+      id: ref.id,
+      title: ref.header,
+      descriptions: ref.description,
+      imagePath: ref.imagePath,
+      fkSubCategoryId: ref.fk
     };
     const dialogRef = this.dialog.open(ReferenceEditComponent, dialogConfig);
 

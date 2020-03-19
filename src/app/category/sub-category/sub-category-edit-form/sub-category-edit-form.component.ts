@@ -37,6 +37,7 @@ export class SubCategoryEditFormComponent implements OnInit {
   gem() {
     console.log('the object to save:');
     console.log(this.newSubCategoryCloudObject);
+    this.subCategoryService.updateData(this.newSubCategoryCloudObject);
     console.log('jeg gemmer data nu.');
     /* this.subCategoryService.updateData(this.newCategoryCloudObject); */
     this.dialogRef.close();
