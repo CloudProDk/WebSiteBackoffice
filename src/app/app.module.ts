@@ -31,6 +31,7 @@ import { ReferenceItemComponent } from './category/sub-category/references/refer
 import { CategoryEditFormComponent } from './category/category-edit-form/category-edit-form.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SubCategoryEditFormComponent } from './category/sub-category/sub-category-edit-form/sub-category-edit-form.component';
+import { HeadlineComponent } from './headline/headline.component';
 
 
 
@@ -49,14 +50,16 @@ import { SubCategoryEditFormComponent } from './category/sub-category/sub-catego
     MainNavComponent,
     ReferenceItemComponent,
     CategoryEditFormComponent,
-    SubCategoryEditFormComponent
+    SubCategoryEditFormComponent,
+    HeadlineComponent
   ],
   entryComponents: [
     ReferenceEditComponent,
     MainNavComponent,
     ReferenceItemComponent,
     CategoryEditFormComponent,
-    SubCategoryEditFormComponent
+    SubCategoryEditFormComponent,
+    HeadlineComponent
   ],
   imports: [
     BrowserModule,
