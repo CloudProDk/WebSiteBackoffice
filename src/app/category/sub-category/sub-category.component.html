@@ -1,1 +1,15 @@
-<p>sub-category works!</p>
+<div class="container" >
+    <div class="row">
+      <div *ngFor="let subCategory of sortedList">
+        <div class="col-xs-4">
+          <h2>{{subCategory.header}}</h2>
+          <p>{{subCategory.description}}</p>
+            <button type="button" 
+                    class="btn btn-info"
+                    (click)="openDialog(subCategory)">
+                      Ændre på Cloud teksten
+            </button>
+        </div>
+      </div>        
+    </div>
+</div>

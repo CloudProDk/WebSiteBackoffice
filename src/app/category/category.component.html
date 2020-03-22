@@ -1,1 +1,22 @@
-<p>category works!</p>
+<div class="container">        
+    <div class="row" >
+        <div class="col-xs-3" *ngFor="let category of listOfCategories"> 
+          <img routerLink = "/sub-category" 
+              style="cursor: pointer;" 
+              class="rounded-circle" 
+              src="{{category.imagePath}}" 
+              alt="Generic placeholder image" 
+              width="140" 
+              height="140"> 
+          <h2>{{category.title}}</h2>          
+          <p>{{category.descriptions}}</p>    
+
+            <button 
+              type="button" 
+              class="btn btn-info"
+              (click) = "openDialog(category.id, category.imagePath, category.title, category.descriptions)" >
+              Ændre på Cloud teksten
+            </button>
+        </div>       
+    </div>
+</div>

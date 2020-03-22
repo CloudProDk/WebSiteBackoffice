@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+        <h2>{{headlineName}}</h2>
+        <div class="col-xs-12">
+            <mat-form-field appearance="fill">
+              <mat-label>Title</mat-label>
+              <input matInput 
+                    value="{{refhelpObject.title}}"
+                    (input)="refhelpObject.title = $event.target.value">
+            </mat-form-field>
+            <br>
+            <mat-form-field appearance="fill">
+                <mat-label>Description</mat-label>
+                <textarea   matInput 
+                            value="{{refhelpObject.descriptions}}"
+                            (input)="refhelpObject.descriptions = $event.target.value" >
+                </textarea>
+            </mat-form-field> <br>
+              <button mat-raised-button color="primary" (click)= "UpdateHeadline()" >Gem</button> &nbsp;
+              <button mat-raised-button color="warn" (click)= "fortryd()" >Fortryd</button>
+        </div> 
+    </div>
+</div>

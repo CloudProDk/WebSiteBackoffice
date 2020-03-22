@@ -1,0 +1,53 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav class="sidenav" mode="side" opened>
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>    
+    <mat-accordion>
+      <mat-expansion-panel *ngFor="let route of routelist" routerLinkActive="selected">
+        <mat-expansion-panel-header (click)="dothis('/sub-category' + route.route)">
+          <mat-panel-title>
+            <div>
+              <a>
+                  <span>{{ route.name }}</span>
+              </a>
+            </div>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <span style="text-align: left;">
+          <mat-list-item *ngFor="let childItem of route.routes" >
+            <div style="font-size: 14px;" (click)="dothis('/references' + childItem.route)"> 
+              {{childItem.name}}
+            </div>
+          </mat-list-item>
+        </span>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <div>
+              <a>
+                  <span>Headlines</span>
+              </a>
+            </div>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <span style="text-align: left;">
+          <mat-list-item (click)= "openDialog1()" >
+            <div style="font-size: 14px;" > 
+              Header 1
+            </div>
+          </mat-list-item>
+          <mat-list-item (click) = "openDialog2()" >
+            <div style="font-size: 14px;"> 
+              Header 2
+            </div>
+          </mat-list-item>
+        </span>
+      </mat-expansion-panel>            
+    </mat-accordion>
+</mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>
