@@ -6,6 +6,7 @@ import { SubCategoryComponent } from './category/sub-category/sub-category.compo
 import { ReferenceListComponent } from './category/sub-category/references/reference-list/reference-list.component';
 import { ReferenceComponent } from './category/sub-category/references/reference.component';
 import { ReferenceItemComponent } from './category/sub-category/references/reference-item/reference-item.component';
+import { AuthenticationGuard } from 'microsoft-adal-angular6';
 
 
 
@@ -13,7 +14,7 @@ import { ReferenceItemComponent } from './category/sub-category/references/refer
 const routes: Routes = [
 
 
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full', canActivate: [AuthenticationGuard] },
   { path: 'home', component: CategoryComponent},
 
   { path: 'references/:references', component: ReferenceComponent},

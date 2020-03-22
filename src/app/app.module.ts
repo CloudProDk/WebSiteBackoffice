@@ -32,8 +32,22 @@ import { CategoryEditFormComponent } from './category/category-edit-form/categor
 import { HttpClientModule } from '@angular/common/http';
 import { SubCategoryEditFormComponent } from './category/sub-category/sub-category-edit-form/sub-category-edit-form.component';
 import { HeadlineComponent } from './headline/headline.component';
+import { MsAdalAngular6Module } from 'microsoft-adal-angular6';
+import { AuthenticationGuard } from 'microsoft-adal-angular6';
 
-
+export function getAdalConfig() {
+  return {
+      tenant: 'ad143624-dfe4-427b-81d5-e4a098b91a9f',
+    clientId: '972644db-3d2d-43bc-aa01-5f7dcb942e55',
+    extraQueryParameter: 'nux=1',
+    redirectUri: window.location.origin,
+    endpoints: {
+      'https://www.xense-Beta.azurewebsites.net/': '972644db-3d2d-43bc-aa01-5f7dcb942e55'
+    },
+    navigateToLoginRequestUrl: false,
+    cacheLocation: '<localStorage / sessionStorage>',
+    };
+}
 
 
 @NgModule({
@@ -62,6 +76,7 @@ import { HeadlineComponent } from './headline/headline.component';
     HeadlineComponent
   ],
   imports: [
+    MsAdalAngular6Module.forRoot(getAdalConfig),
     BrowserModule,
     AppRoutingModule,
     NoopAnimationsModule,
@@ -85,7 +100,7 @@ import { HeadlineComponent } from './headline/headline.component';
 
 
   ],
-  providers: [RouteList, {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}],
+  providers: [AuthenticationGuard, RouteList, {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}],
 
   bootstrap: [AppComponent]
 })
